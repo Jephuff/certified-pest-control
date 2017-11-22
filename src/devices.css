@@ -1,0 +1,312 @@
+/*BIG PHONE*/
+@media only screen and (min-width: 560px) {
+.col-xs-1 {
+	width: 08.333333%;
+	}
+.col-xs-2 {
+	width: 16.666667%;
+	}
+.col-xs-3 {
+	width: 25%;
+	}
+.col-xs-4 {
+	width: 33.333333%;
+	}
+.col-xs-5 {
+	width: 41.66666%;
+	}
+.col-xs-6 {
+	width: 50%;
+	}
+.col-xs-7 {
+	width: 58.333333%;
+	}
+.col-xs-8 {
+	width: 66.66666667%;
+	}
+.col-xs-9 {
+	width: 75%;
+	}
+.col-xs-10 {
+	width: 83.3333333%;
+	}
+.col-xs-11 {
+	width: 91.666667%;
+	}
+.col-xs-12 {
+	width: 100%;
+	}
+.col-xs-offset-3 {
+    margin: 0px 25%;
+	}
+/*ALL*/
+body {
+    font-size: 14px;
+}
+/*HEADER*/  	
+header h1, .services-header h1, .contact-header h1 {
+	font-size: 2.2em;					
+}
+header .button {
+	font-size: .9em;
+}	
+/*WHY*/
+.why img {
+    width: 20%;
+	}
+/*QUESTIONS*/
+.number {
+    width: 10%;	
+}
+
+/*TABLET*/
+@media only screen and (min-width: 768px) {
+.col-sm-1 {
+	width: 08.333333%;
+	}
+.col-sm-2 {
+	width: 16.666667%;
+	}
+.col-sm-3 {
+	width: 25%;
+	}
+.col-sm-4 {
+	width: 33.333333%;
+	}
+.col-sm-5 {
+	width: 41.66666%;
+	}
+.col-sm-6 {
+	width: 50%;
+	}
+.col-sm-7 {
+	width: 58.333333%;
+	}
+.col-sm-8 {
+	width: 66.66666667%;
+	}
+.col-sm-9 {
+	width: 75%;
+	}
+.col-sm-10 {
+	width: 83.3333333%;
+	}
+.col-sm-11 {
+	width: 91.666667%;
+	}
+.col-sm-12 {
+	width: 100%;
+	}		
+.col-sm-offset-1 {
+    margin: 0px 08.333333%;
+	}	
+.col-sm-offset-2 {
+    margin: 0px 16.66666667%;
+	}
+.col-sm-offset-2 {
+    margin: 0px 16.66666667%;
+	}
+.col-sm-offset-3 {
+    margin: 0px 25%;
+	}			
+.visible-sm {
+    display: block !important;
+}
+.hidden-sm {
+    display: none !important;
+}	
+/*ALL*/
+body {
+    font-size: 15px;
+}    
+p {
+    text-align: left;
+}
+h2 {
+    font-size: 1.6em;
+}
+h3 {
+    margin: 15px 0px;    	
+}
+.padding-block {
+    padding: 0px 10px;
+}
+.box >.padding-block {
+	padding: 20px 30px;
+}  
+/*NAV*/
+nav {
+    position: fixed;
+}
+.nav-bar {
+    float: right;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}        
+/*HEADER*/
+header, .services-header , .contact-header {
+    margin-top: 100px;
+}
+header h1, .services-header h1, .contact-header h1  {
+	font-size: 2.6em;
+}
+header p, .services-header p, .contact-header p {
+	font-size: 1.3em;
+}	
+header .button {
+	font-size: 1em;
+    padding: 10px 50px;
+    position: absolute;
+    bottom: -18px;
+    border: none;
+    transform: translateX(-50%);
+}
+.button {
+    box-shadow: 1px 1px 1px #8a8a8a;
+}
+/*WHY*/
+.why img {
+    width: 40%;
+    padding-top: 0px;
+}	
+/*QUESTIONS*/
+.number {
+    float: right;
+    width: 50%;
+    padding-top: 0px;
+	}
+/*CONTACT FORM*/ 
+.relative {
+	position: relative;
+}
+label {
+    margin-top: 5px;
+}
+.bottom {
+	position: absolute;
+	bottom: 10px;
+	right: 20px;
+	}
+.contact-form .button {
+    box-shadow: none;
+	}					
+}
+
+/*DESKTOP*/
+@media only screen and (min-width: 992px) {
+.col-md-1 {
+	width: 08.333333%;
+	}
+.col-md-2 {
+	width: 16.666667%;
+	}
+.col-md-3 {
+	width: 25%;
+	}
+.col-md-4 {
+	width: 33.333333%;
+	}
+.col-md-5 {
+	width: 41.66666%;
+	}
+.col-md-6 {
+	width: 50%;
+	}
+.col-md-7 {
+	width: 58.333333%;
+	}
+.col-md-8 {
+	width: 66.66666667%;
+	}
+.col-md-9 {
+	width: 75%;
+	}
+.col-md-10 {
+	width: 83.3333333%;
+	}
+.col-md-11 {
+	width: 91.666667%;
+	}
+.col-md-12 {
+	width: 100%;
+	}
+.col-md-offset-1 {
+    margin: 0px 08.333333%;
+	}	
+.col-md-offset-2 {
+    margin: 0px 16.66666667%;
+	}
+/*ALL*/
+.padding-block {
+    padding: 0px 20px;
+}
+.box > .padding-block {
+	padding: 30px;
+}
+.services-details .box >.padding-block, .packages .white-background >.padding-block {
+    padding: 10px 30px 30px 30px;
+}    			
+/*HEADER*/
+header h1, .services-header h1, .contact-header h1 {
+	font-size: 2.9em;
+}  
+header .button {
+    padding: 10px 90px;
+}
+/*SERVICES*/
+.padding-top {
+	padding-top:30px;
+}    			
+/* QUESTIONS */
+.number {
+    width: 80%;
+	}
+/*CONTACT FORM*/	
+.form-group label {
+	text-align: right;
+	}	
+}	    	
+
+/*DESKTOP - LARGE*/
+@media only screen and (min-width: 1200px) {
+.col-lg-1 {
+	width: 08.333333%;
+	}
+.col-lg-2 {
+	width: 16.666667%;
+	}
+.col-lg-3 {
+	width: 25%;
+	}
+.col-lg-4 {
+	width: 33.333333%;
+	}
+.col-lg-5 {
+	width: 41.66666%;
+	}
+.col-lg-6 {
+	width: 50%;
+	}
+.col-lg-7 {
+	width: 58.333333%;
+	}
+.col-lg-8 {
+	width: 66.66666667%;
+	}
+.col-lg-9 {
+	width: 75%;
+	}
+.col-lg-10 {
+	width: 83.3333333%;
+	}
+.col-lg-11 {
+	width: 91.666667%;
+	}
+.col-lg-12 {
+	width: 100%;
+	}
+/*HEADER*/
+header, .services-header, .contact-header {
+    margin-top: 116px;
+}
