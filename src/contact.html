@@ -180,14 +180,12 @@
 </style>
 <script>
 	function initMap() {
+		var latlng = new google.maps.LatLng(43.992606, -78.023462);
 		var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 44.022398, lng: -78.148599 },
+          center: latlng,
           zoom: 15,
 		  disableDefaultUI: true,
-		//   scrollwheel: false
         });
-
-		var latlng = new google.maps.LatLng(44.022398, -78.148599);
 
 		var centered = false;
 		map.addListener('projection_changed', function() {
@@ -199,7 +197,6 @@
 				var leftPostion = (window.innerWidth - covered) / 2;
 				offsetCenter(latlng, leftPostion - center, 0);
 			}
-			
 		});
 
 		function offsetCenter(latlng, offsetx, offsety) {
@@ -228,7 +225,7 @@
         var service = new google.maps.places.PlacesService(map);
 
         service.getDetails({
-          placeId: 'ChIJd870gJbD1YkRtR9mnRh8X-c'
+          placeId: 'ChIJOUaZBs7d1YkR4lHI05GKpRk'
         }, function(place, status) {
           if (status === google.maps.places.PlacesServiceStatus.OK) {
             var marker = new google.maps.Marker({
@@ -236,7 +233,7 @@
               position: place.geometry.location
             });
             google.maps.event.addListener(marker, 'click', function() {
-				window.open('https://www.google.ca/maps/place/Baltimore,+ON+K9A+4J9/@44.022394,-78.1491432,19z/data=!4m5!3m4!1s0x89d5c39680f4ce77:0xe75f7c189d661fb5!8m2!3d44.0225579!4d-78.148501', '_BLANK')
+				window.open('https://www.google.ca/maps/place/Grafton,+ON+K0K+2G0/@43.9923162,-78.0345331,14.63z/data=!4m13!1m7!3m6!1s0x89d5ddce06994639:0x19a58a91d3c851e2!2sGrafton,+ON+K0K+2G0!3b1!8m2!3d43.992634!4d-78.023383!3m4!1s0x89d5ddce06994639:0x19a58a91d3c851e2!8m2!3d43.992634!4d-78.023383', '_BLANK')
             });
           }
         });
