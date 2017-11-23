@@ -12,7 +12,6 @@
 	<link rel="stylesheet" type="text/css" href="grid.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="devices.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -71,12 +70,10 @@
 </section>	
 
 <!--CONTACT FORM-->
-<section class="contact-form">
-	<div class="container">		
-		<div class="row">	
-			<div class="col-sm-5 padding-bottom">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d331203.894541559!2d-78.54099719419614!3d44.273824286800995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d5c39680f4ce77%3A0xe75f7c189d661fb5!2sBaltimore%2C+ON+K9A+4J9!5e0!3m2!1sen!2sca!4v1511118467082" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-			</div>	
+<section class="contact-form" style="padding: 0; position: relative;">
+	<div id="map" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;"></div>
+	<div class="container map-overlay" style="padding: 40px 40px 40px 0; position: relative; width: 50%; margin-right: 0; max-width: 600px;">
+		<div class="row">
 			<div class="col-sm-7">
 				<div class="form">
 				<h3>Contact Us</h3> 				
@@ -173,5 +170,68 @@
 		</div>
 	</div>
 </footer>
+<script>
+	function initMap() {
+		var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 44.022398, lng: -78.148599 },
+          zoom: 15,
+		  disableDefaultUI: true
+        });
 
+		var latlng = new google.maps.LatLng(44.022398, -78.148599);
+
+		var centered = false;
+		map.addListener('projection_changed', function() {
+			if(!centered) {
+				centered = true;
+				const center = window.innerWidth / 2;
+				var overlay = document.querySelector('.map-overlay');
+				var covered = overlay ? overlay.offsetWidth : center;
+				var leftPostion = (window.innerWidth - covered) / 2;
+				offsetCenter(latlng, leftPostion - center, 0);
+			}
+			
+		});
+
+		function offsetCenter(latlng, offsetx, offsety) {
+
+			// latlng is the apparent centre-point
+			// offsetx is the distance you want that point to move to the right, in pixels
+			// offsety is the distance you want that point to move upwards, in pixels
+			// offset can be negative
+			// offsetx and offsety are both optional
+
+			var scale = Math.pow(2, map.getZoom());
+			console.log(map.getProjection())
+			var worldCoordinateCenter = map.getProjection().fromLatLngToPoint(latlng);
+			var pixelOffset = new google.maps.Point((offsetx/scale) || 0,(offsety/scale) ||0);
+
+			var worldCoordinateNewCenter = new google.maps.Point(
+				worldCoordinateCenter.x - pixelOffset.x,
+				worldCoordinateCenter.y + pixelOffset.y
+			);
+
+			var newCenter = map.getProjection().fromPointToLatLng(worldCoordinateNewCenter);
+
+			map.setCenter(newCenter);
+		}
+
+        var service = new google.maps.places.PlacesService(map);
+
+        service.getDetails({
+          placeId: 'ChIJd870gJbD1YkRtR9mnRh8X-c'
+        }, function(place, status) {
+          if (status === google.maps.places.PlacesServiceStatus.OK) {
+            var marker = new google.maps.Marker({
+              map: map,
+              position: place.geometry.location
+            });
+            google.maps.event.addListener(marker, 'click', function() {
+				window.open('https://www.google.ca/maps/place/Baltimore,+ON+K9A+4J9/@44.022394,-78.1491432,19z/data=!4m5!3m4!1s0x89d5c39680f4ce77:0xe75f7c189d661fb5!8m2!3d44.0225579!4d-78.148501', '_BLANK')
+            });
+          }
+        });
+	}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5jg7LfSimPCet2TOxvTv0O8yHsTFwimo&callback=initMap&libraries=places" async defer></script>
 </body>
