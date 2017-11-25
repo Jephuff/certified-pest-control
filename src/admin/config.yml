@@ -1,0 +1,14 @@
+backend:
+  name: github
+  repo: owner/repo # Path to your Github repository
+  branch: master # Branch to update (master by default)
+
+media_folder: "img/uploads" # Folder where user uploaded files should go
+
+collections:
+  - name: "homepage"
+    label: "Home Page"
+    folder: "data"
+    fields:
+      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+      - {label: "Body", name: "body", widget: "markdown"}
