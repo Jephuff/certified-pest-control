@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "mkdir dist && cp -R src/* dist"
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,11 @@
   "bugs": {
     "url": "https://gitlab.com/Jephuff/certified-pest-control/issues"
   },
-  "homepage": "https://gitlab.com/Jephuff/certified-pest-control#README"
+  "homepage": "https://gitlab.com/Jephuff/certified-pest-control#README",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-compile-handlebars": "^0.6.1",
+    "handlebars": "^4.0.11",
+    "mkdirp": "^0.5.1"
+  }
 }
