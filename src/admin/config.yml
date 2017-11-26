@@ -14,7 +14,13 @@ collections:
         file: "data/home.json"
         description: "Home Page Content"
         fields:
-          - {label: "Title", name: "title", widget: "string"}
+          - name: "questions"
+            label: "Common Questions"
+            description: "Top 2 questions will be displayed"
+            widget: list
+            fields:
+              - {label: "Question", name: "question", widget: "string"}
+              - {label: "Answer", name: "answer", widget: "string"}
       - name: "contact"
         label: "Contact Page"
         file: "data/contact.json"
