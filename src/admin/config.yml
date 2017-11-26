@@ -8,10 +8,16 @@ media_folder: "img/uploads"
 collections:
   - name: "pages"
     label: "Pages"
-    folder: "data/pages"
-    create: true
-    format: "json"
-    extension: "json"
-    fields:
-      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
-      - {label: "Body", name: "body", widget: "markdown"}
+    files:
+      - name: "home"
+        label: "Home Page"
+        file: "data/home.json"
+        description: "Home Page Content"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+      - name: "contact"
+        label: "Contact Page"
+        file: "data/contact.json"
+        description: "Contact Page Content"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
