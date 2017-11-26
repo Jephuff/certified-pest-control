@@ -6,10 +6,12 @@ backend:
 media_folder: "img/uploads"
 
 collections:
-  - name: "homepage"
-    label: "Home Page"
-    folder: "data"
+  - name: "pages"
+    label: "Pages"
+    folder: "data/pages"
     create: true
+    format: "json"
+    extension: "json"
     fields:
       - {label: "Title", name: "title", widget: "string", tagname: "h1"}
       - {label: "Body", name: "body", widget: "markdown"}
