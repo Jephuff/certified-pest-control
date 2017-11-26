@@ -45,7 +45,7 @@
 				</div>
 				<div class="col-sm-8 col-md-9">
 					<div class="nav-bar">
-					<span class="toll-free">Toll free: 1-888-799-7990</span>
+					<span class="toll-free">Toll free: {{contact.phone}}</span>
 					<ul class="nav">
 						<li><a href="index.html">Home</a></li>
 						<li><a href="services.html">Services</a></li>
@@ -205,8 +205,9 @@
 				<div class="padding-block">
 				<h2>Optional Add-ons</h2> 
 				<ul>
-					<li> <i class="fa fa-check" aria-hidden="true"></i> Interior insect control</li>
-					<li><i class="fa fa-check" aria-hidden="true"></i> Rodent control, seasonal or year-round depending on needs</li>	
+					{{#each services.addOns}}
+						<li><i class="fa fa-check" aria-hidden="true"></i>{{this.addOn}}</li>
+					{{/each}}
 				</ul>
 				</div>
 			</div>
@@ -221,7 +222,7 @@
 		<div class="col-md-3 col-sm-3 col-xxs-7">
 		<ul class="fa-ul list">
 			<li><i class="fa-li fa fa-map-marker"> </i> Baltimore, ON</li>
-			<li><i class="fa-li fa fa-mobile "> </i> Toll free: 1-888-799-7990</li>
+			<li><i class="fa-li fa fa-mobile "> </i> Toll free: {{contact.phone}}</li>
 			<li><i class="fa-li fa fa-envelope-o"> </i> <a href="mailto:info@certifiedpest.ca">info@certifiedpest.ca</a></li>
 		</ul>
 		</div> 

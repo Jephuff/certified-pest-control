@@ -13,6 +13,7 @@ collections:
         label: "Home Page"
         file: "data/home.json"
         description: "Home Page Content"
+        preview: false
         fields:
           - name: "questions"
             label: "Common Questions"
@@ -25,5 +26,18 @@ collections:
         label: "Contact Page"
         file: "data/contact.json"
         description: "Contact Page Content"
+        preview: false
         fields:
-          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Phone Number", name: "phone", widget: "string"}
+      - name: "services"
+        label: "Services Page"
+        file: "data/services.json"
+        description: "Services Page Content"
+        preview: false
+        fields:
+          - name: "addOns"
+            label: "Add Ons"
+            description: "available add-ons"
+            widget: list
+            fields:
+              - {label: "Add On", name: "addOn", widget: "string"}
