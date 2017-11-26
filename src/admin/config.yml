@@ -9,6 +9,7 @@ collections:
   - name: "homepage"
     label: "Home Page"
     folder: "data"
+    create: true
     fields:
       - {label: "Title", name: "title", widget: "string", tagname: "h1"}
       - {label: "Body", name: "body", widget: "markdown"}
