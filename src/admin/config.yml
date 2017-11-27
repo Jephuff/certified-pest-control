@@ -5,8 +5,6 @@ backend:
 
 media_folder: "img/uploads"
 
-publish_mode: editorial_workflow
-
 collections:
   - name: "pages"
     label: "Pages"
