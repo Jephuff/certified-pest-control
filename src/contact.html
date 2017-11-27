@@ -1,243 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certified Pest Control</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Certified Pest Control</title>
 
-    <link rel="shortcut icon" type="links/favicon.png" href="links/favicon.png"/>
+	<link rel="shortcut icon" type="links/favicon.png" href="links/favicon.png" />
 
 	<!-- CSS -->
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />
 	<link rel="stylesheet" type="text/css" href="grid.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="devices.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="devices.css" rel="stylesheet">
 </head>
 
 <body>
 
-<!--NAV-->
-<nav>
-	<div class="hidden-sm">
-		<div class="row dark center">
-			<div class="col-xxs-4">
-				<a href="index.html">Home</a>
+	<!--NAV-->
+	<nav>
+		<div class="hidden-sm">
+			<div class="row dark center">
+				<div class="col-xxs-4">
+					<a href="index.html">Home</a>
+				</div>
+				<div class="col-xxs-4">
+					<a href="services.html">Services</a>
+				</div>
+				<div class="col-xxs-4">
+					<a href="contact.html#">Contact</a>
+					</li>
+				</div>
 			</div>
-			<div class="col-xxs-4">	
-				<a href="services.html">Services</a>
+			<div class="row top-margin">
+				<div class="col-xxs-8 col-xxs-offset-2 col-xs-6 col-xs-offset-3">
+					<a href="index.html">
+						<img class="logo" alt="Logo" src="links/logo.png">
+					</a>
+				</div>
 			</div>
-			<div class="col-xxs-4">	
-				<a href="contact.html#">Contact</a></li>
-			</div>	
 		</div>
-		<div class="row top-margin">
-			<div class="col-xxs-8 col-xxs-offset-2 col-xs-6 col-xs-offset-3">
-				<a href="index.html"><img class="logo" alt="Logo" src="links/logo.png"></a>
+		<div class="container">
+			<div class="visible-sm">
+				<div class="row">
+					<div class="col-sm-4 col-md-3">
+						<a href="index.html">
+							<img class="logo" alt="Logo" src="links/logo.png">
+						</a>
+					</div>
+					<div class="col-sm-8 col-md-9">
+						<div class="nav-bar">
+							<span class="toll-free">Toll free: {{contact.phone}}</span>
+							<ul class="nav">
+								<li>
+									<a href="index.html">Home</a>
+								</li>
+								<li>
+									<a href="services.html">Services</a>
+								</li>
+								<li>
+									<a href="contact.html#">Contact</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
-	<div class="container">
-		<div class="visible-sm">
+	</nav>
+
+	<!--HEADER-->
+	<section class="contact-header">
+		<div class="container">
 			<div class="row">
-				<div class="col-sm-4 col-md-3">
-					<a href="index.html"><img class="logo" alt="Logo" src="links/logo.png"></a>
+				<div class="col-md-10 col-md-offset-1">
+					<h1>Contact Us</h1>
+					<p>It’s very important to us that all your questions are answered. Please don’t hesitate to contact us with any questions
+						by using the form below or emailing us at
+						<a href="mailto:info@certifiedpest.ca">info@certifiedpest.ca.</a>
+					</p>
 				</div>
-				<div class="col-sm-8 col-md-9">
-					<div class="nav-bar">
-					<span class="toll-free">Toll free: {{contact.phone}}</span>
-					<ul class="nav">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="services.html">Services</a></li>
-						<li><a href="contact.html#">Contact</a></li>
+			</div>
+		</div>
+	</section>
+
+	<!--CONTACT FORM-->
+	<section class="contact-form" style="padding: 0; position: relative;">
+		<div id="map" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;"></div>
+		<div class="container map-overlay" style="padding: 40px 40px 40px 0; position: relative; width: 50%; margin-left: 50%; max-width: 600px;">
+			<div class="form">
+				<h3>Contact Us</h3>
+				<form autocomplete="off" id="contact_us" method="post" role="form"></form>
+				<div class="form-group">
+					<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="firstname">How can we help you? </label>
+					<div class="col-md-7 col-lg-8 col-xxs-12">
+						<select class="form-control" id="year" name="year" tabindex="12">
+							<option value="Request a Free Quote">Request a free quote</option>
+							<option value="General Inquiries">General inquiries</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="firstname">Package type </label>
+					<div class="col-md-7 col-lg-8 col-xxs-12">
+						<select class="form-control" id="year" name="year" tabindex="12">
+							<option value="gold">Gold</option>
+							<option value="silver">Silver</option>
+							<option value="bronze">Bronze</option>
+							<option value="unsure">Unsure</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="firstname">Full name
+						<span class="orange">*</span>
+					</label>
+					<div class="col-md-7 col-lg-8 col-xxs-12">
+						<input class="form-control" id="fullname" name="fullname" type="text">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="email">Email
+						<span class="orange">*</span>
+					</label>
+					<div class="col-md-7 col-lg-8 col-xxs-12">
+						<input class="form-control" id="email" name="email" type="text">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="phone">Phone</label>
+					<div class="col-md-7 col-lg-8 col-xxs-12">
+						<input class="form-control check" id="phone" name="phone" type="text">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="street">Street</label>
+					<div class="col-md-7 col-lg-8 col-xxs-12">
+						<input class="form-control check" id="street" name="street" type="text">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="city">City</label>
+					<div class="col-md-7 col-lg-8 col-xxs-12">
+						<input class="form-control check" id="city" name="city" type="text">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="postalcode">Postal Code</label>
+					<div class="col-md-7 col-lg-8 col-xxs-12">
+						<input class="form-control check" id="postalcode" name="postalcode" type="text">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-5 col-lg-4 col-xxs-12 control-label" or="message">Message
+						<span class="orange">*</span>
+					</label>
+					<div class="col-md-7 col-lg-8 col-xxs-12">
+						<textarea class="form-control check" id="message" name="message" rows="6"></textarea>
+					</div>
+				</div>
+				<a class="button" href="contact.html">Send Request</a>
+			</div>
+		</div>
+	</section>
+
+	<!--FOOTER-->
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 col-sm-3 col-xxs-7">
+					<ul class="fa-ul list">
+						<li>
+							<i class="fa-li fa fa-map-marker"> </i> Baltimore, ON</li>
+						<li>
+							<i class="fa-li fa fa-mobile "> </i> Toll free: {{contact.phone}}</li>
+						<li>
+							<i class="fa-li fa fa-envelope-o"> </i>
+							<a href="mailto:info@certifiedpest.ca">info@certifiedpest.ca</a>
+						</li>
 					</ul>
-					</div>
+				</div>
+				<div class="col-md-6 col-sm-5 col-xxs-5">
+					<p class="five-margin-bottom">
+						<b>Follow Us</b>
+					</p>
+					<a href="https://www.facebook.com/certifiedpest/?ref=br_rs">
+						<i class="fa fa-2x fa-facebook-square"></i>
+					</a>
+					<a href="#">
+						<i class="fa fa-2x  fa-instagram"></i>
+					</a>
+					<a href="https://www.linkedin.com/in/certifiedpest/">
+						<i class="fa fa-2x fa-linkedin-square"></i>
+					</a>
+				</div>
+				<div class="col-md-3 col-sm-4 visible-sm">
+					<ul class="fa-ul list">
+						<li>
+							<i class="fa-li fa fa-check-square-o"> </i> Certified Pest Control is licensed by the Ministry of the Environment.</li>
+					</ul>
 				</div>
 			</div>
-		</div>
-	</div>
-</nav>
-
-<!--HEADER-->
-<section class="contact-header">	
-	<div class="container">
-		<div class="row">
-			<div class="col-md-10 col-md-offset-1">
-			<h1>Contact Us</h1>	
-			<p>It’s very important to us that all your questions are answered. Please don’t hesitate to contact us with any questions by using the form below or emailing us at  <a href="mailto:info@certifiedpest.ca">info@certifiedpest.ca.</a></p>
+			<div class="row">
+				<div class="col-md-12">
+					<p class="note border-top"> Copyright 2017 © Certified Pest Control</p>
+				</div>
 			</div>
-		</div>
-	</div>	
-</section>	
-
-<!--CONTACT FORM-->
-<section class="contact-form" style="padding: 0; position: relative;">
-	<div id="map" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;"></div>
-	<div class="container map-overlay" style="padding: 40px 40px 40px 0; position: relative; width: 50%; margin-right: 0; max-width: 600px;">
-		<div class="row">
-			<div class="col-sm-7">
-				<div class="form">
-				<h3>Contact Us</h3> 				
-				<form autocomplete="off" id="contact_us" method="post" role="form">
-				</form>
-					<div class="form-group">
-						<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="firstname">How can we help you? </label>
-						<div class="col-md-7 col-lg-8 col-xxs-12">
-						<select class="form-control" id="year" name="year" tabindex="12">
-						<option value="Request a Free Quote">Request a free quote</option>
-						<option value="General Inquiries">General inquiries</option>
-						</select>	
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="firstname">Package type </label>
-						<div class="col-md-7 col-lg-8 col-xxs-12">
-						<select class="form-control" id="year" name="year" tabindex="12">
-						<option value="gold">Gold</option>
-						<option value="silver">Silver</option>
-						<option value="bronze">Bronze</option>
-						<option value="unsure">Unsure</option>
-						</select>	
-					</div>
-					</div>
-					<div class="form-group">
-						<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="firstname">Full name <span class="orange">*</span></label> 
-						<div class="col-md-7 col-lg-8 col-xxs-12"><input class="form-control" id="fullname" name="fullname" type="text">
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="email">Email <span class="orange">*</span> </label> 
-						<div class="col-md-7 col-lg-8 col-xxs-12"><input class="form-control" id="email" name="email" type="text">
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="phone">Phone</label> 
-						<div class="col-md-7 col-lg-8 col-xxs-12"><input class="form-control check" id="phone" name="phone" type="text">
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="street">Street</label> 
-						<div class="col-md-7 col-lg-8 col-xxs-12"><input class="form-control check" id="street" name="street" type="text">
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="city">City</label> 
-						<div class="col-md-7 col-lg-8 col-xxs-12"><input class="form-control check" id="city" name="city" type="text">
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="postalcode">Postal Code</label> 
-						<div class="col-md-7 col-lg-8 col-xxs-12"><input class="form-control check" id="postalcode" name="postalcode" type="text">
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-md-5 col-lg-4 col-xxs-12 control-label"or="message">Message <span class="orange">*</span></label> 
-						<div class="col-md-7 col-lg-8 col-xxs-12"><textarea class="form-control check" id="message" name="message" rows="6"></textarea>
-						</div>
-					</div>
-					<a class="button" href="contact.html">Send Request</a>
-				</form>
-			</div>	
-		</div>
-	</div>	
-</section>
-
-<!--FOOTER-->
-<footer>
-	<div class="container">
-	<div class="row">
-		<div class="col-md-3 col-sm-3 col-xxs-7">
-		<ul class="fa-ul list">
-			<li><i class="fa-li fa fa-map-marker"> </i> Baltimore, ON</li>
-			<li><i class="fa-li fa fa-mobile "> </i> Toll free: {{contact.phone}}</li>
-			<li><i class="fa-li fa fa-envelope-o"> </i> <a href="mailto:info@certifiedpest.ca">info@certifiedpest.ca</a></li>
-		</ul>
-		</div> 
-		<div class="col-md-6 col-sm-5 col-xxs-5"> 
-		<p class="five-margin-bottom"><b>Follow Us</b></p> 
-		<a href="https://www.facebook.com/certifiedpest/?ref=br_rs"><i class="fa fa-2x fa-facebook-square"></i></a> 
-		<a href="#"><i class="fa fa-2x  fa-instagram"></i></a> 
-		<a href="https://www.linkedin.com/in/certifiedpest/"><i class="fa fa-2x fa-linkedin-square"></i></a> 
-		</div> 
-		<div class="col-md-3 col-sm-4 visible-sm"> 
-		<ul class="fa-ul list"> 
-			<li><i class="fa-li fa fa-check-square-o"> </i> Certified Pest Control is licensed by the Ministry of the Environment.</li> 
-		</ul> 
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12">
-		<p class="note border-top"> Copyright 2017 © Certified Pest Control</p>
-		</div>
-	</div>
-</footer>
-<style>
-	.gm-style-pbt {
-		min-width: 50%;
-		width: 50%;
-		width: calc(100% - 640px);
-    	text-align: center;
-	}
-</style>
-<script>
-	function initMap() {
-		var latlng = new google.maps.LatLng(43.992606, -78.023462);
-		var map = new google.maps.Map(document.getElementById('map'), {
-          center: latlng,
-          zoom: 15,
-		  disableDefaultUI: true,
-        });
-
-		var centered = false;
-		map.addListener('projection_changed', function() {
-			if(!centered) {
-				centered = true;
-				const center = window.innerWidth / 2;
-				var overlay = document.querySelector('.map-overlay');
-				var covered = overlay ? overlay.offsetWidth : center;
-				var leftPostion = (window.innerWidth - covered) / 2;
-				offsetCenter(latlng, leftPostion - center, 0);
-			}
-		});
-
-		function offsetCenter(latlng, offsetx, offsety) {
-
-			// latlng is the apparent centre-point
-			// offsetx is the distance you want that point to move to the right, in pixels
-			// offsety is the distance you want that point to move upwards, in pixels
-			// offset can be negative
-			// offsetx and offsety are both optional
-
-			var scale = Math.pow(2, map.getZoom());
-			console.log(map.getProjection())
-			var worldCoordinateCenter = map.getProjection().fromLatLngToPoint(latlng);
-			var pixelOffset = new google.maps.Point((offsetx/scale) || 0,(offsety/scale) ||0);
-
-			var worldCoordinateNewCenter = new google.maps.Point(
-				worldCoordinateCenter.x - pixelOffset.x,
-				worldCoordinateCenter.y + pixelOffset.y
-			);
-
-			var newCenter = map.getProjection().fromPointToLatLng(worldCoordinateNewCenter);
-
-			map.setCenter(newCenter);
+	</footer>
+	<style>
+		.gm-style-pbt {
+			min-width: 50%;
+			width: 50%;
+			width: calc(100% - 640px);
+			text-align: center;
 		}
+	</style>
+	<script>
+		function initMap() {
+			var latlng = new google.maps.LatLng(43.992606, -78.023462);
+			var map = new google.maps.Map(document.getElementById('map'), {
+				center: latlng,
+				zoom: 15,
+				disableDefaultUI: true,
+			});
 
-        var service = new google.maps.places.PlacesService(map);
+			var centered = false;
+			map.addListener('projection_changed', function () {
+				if (!centered) {
+					centered = true;
+					const center = window.innerWidth / 2;
+					var overlay = document.querySelector('.map-overlay');
+					var covered = overlay ? overlay.offsetWidth : center;
+					var leftPostion = (window.innerWidth - covered) / 2;
+					offsetCenter(latlng, leftPostion - center, 0);
+				}
+			});
 
-        service.getDetails({
-          placeId: 'ChIJOUaZBs7d1YkR4lHI05GKpRk'
-        }, function(place, status) {
-          if (status === google.maps.places.PlacesServiceStatus.OK) {
-            var marker = new google.maps.Marker({
-              map: map,
-              position: place.geometry.location
-            });
-            google.maps.event.addListener(marker, 'click', function() {
-				window.open('https://www.google.ca/maps/place/Grafton,+ON+K0K+2G0/@43.9923162,-78.0345331,14.63z/data=!4m13!1m7!3m6!1s0x89d5ddce06994639:0x19a58a91d3c851e2!2sGrafton,+ON+K0K+2G0!3b1!8m2!3d43.992634!4d-78.023383!3m4!1s0x89d5ddce06994639:0x19a58a91d3c851e2!8m2!3d43.992634!4d-78.023383', '_BLANK')
-            });
-          }
-        });
-	}
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5jg7LfSimPCet2TOxvTv0O8yHsTFwimo&callback=initMap&libraries=places" async defer></script>
+			function offsetCenter(latlng, offsetx, offsety) {
+
+				// latlng is the apparent centre-point
+				// offsetx is the distance you want that point to move to the right, in pixels
+				// offsety is the distance you want that point to move upwards, in pixels
+				// offset can be negative
+				// offsetx and offsety are both optional
+
+				var scale = Math.pow(2, map.getZoom());
+				console.log(map.getProjection())
+				var worldCoordinateCenter = map.getProjection().fromLatLngToPoint(latlng);
+				var pixelOffset = new google.maps.Point((offsetx / scale) || 0, (offsety / scale) || 0);
+
+				var worldCoordinateNewCenter = new google.maps.Point(
+					worldCoordinateCenter.x - pixelOffset.x,
+					worldCoordinateCenter.y + pixelOffset.y
+				);
+
+				var newCenter = map.getProjection().fromPointToLatLng(worldCoordinateNewCenter);
+
+				map.setCenter(newCenter);
+			}
+
+			var service = new google.maps.places.PlacesService(map);
+
+			service.getDetails({
+				placeId: 'ChIJOUaZBs7d1YkR4lHI05GKpRk'
+			}, function (place, status) {
+				if (status === google.maps.places.PlacesServiceStatus.OK) {
+					var marker = new google.maps.Marker({
+						map: map,
+						position: place.geometry.location
+					});
+					google.maps.event.addListener(marker, 'click', function () {
+						window.open('https://www.google.ca/maps/place/Grafton,+ON+K0K+2G0/@43.9923162,-78.0345331,14.63z/data=!4m13!1m7!3m6!1s0x89d5ddce06994639:0x19a58a91d3c851e2!2sGrafton,+ON+K0K+2G0!3b1!8m2!3d43.992634!4d-78.023383!3m4!1s0x89d5ddce06994639:0x19a58a91d3c851e2!8m2!3d43.992634!4d-78.023383', '_BLANK')
+					});
+				}
+			});
+		}
+	</script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5jg7LfSimPCet2TOxvTv0O8yHsTFwimo&callback=initMap&libraries=places"
+	 async defer></script>
 </body>
