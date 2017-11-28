@@ -1,14 +1,91 @@
 <!doctype html>
 <html>
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
-  
+
   <link rel="stylesheet" href="https://unpkg.com/netlify-cms@^0.7.0/dist/cms.css" />
-  
 </head>
+
 <body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.1/axios.min.js"></script>
   <script src="https://unpkg.com/netlify-cms@^0.7.0/dist/cms.js"></script>
+  <script>
+    var pages = {};
+    var data = {};
+    var jsonFiles = {
+      "data/contact.json": "contact",
+      "data/home.json": "home",
+      "data/services.json": "services",
+    };
+
+    function getPages() {
+      return Promise.all(
+        ['index', 'services', 'contact'].map(function (file) {
+          return axios.get("https://raw.githubusercontent.com/Jephuff/certified-pest-control/master/src/" + file + ".html")
+            .then(function (d) { pages[(file === 'index' ? 'home' : file)] = d.data; });
+        })
+      );
+    }
+    getPages();
+
+    function makeDataUrl(str, mimeType) {
+      return 'data:text/' + mimeType + ';base64,' + btoa(unescape(encodeURIComponent(str)));
+    }
+
+    function getPageUrl(page, data) {
+      var templated = Handlebars.compile(pages[page])(data)
+        .replace(
+        '<head>',
+        '<head>\n' +
+          '<base href="https://certifiedpest.netlify.com/">\n' +
+          '<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.1/axios.min.js"><\/script>' +
+          '<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"><\/script>' +
+          '<script>\n' +
+            'var data = ' + JSON.stringify(data) + ';\n' +
+            'var pages = {};\n' +
+            makeDataUrl.toString() + ';\n' +
+            getPageUrl.toString() + ';\n' +
+            getPages.toString() + ';\n' +
+            'getPages().then(function() {' +
+              'document.querySelectorAll(\'a[href="index.html"],a[href="services.html"],a[href="contact.html"]\').forEach(function(el) {\n' +
+                'var page = el.href.match(/([^/]+)\.html/)[1];\n' +
+                'el.href = getPageUrl(page === "index" ? "home" : page, data);\n' +
+              '});\n' +
+            '});\n' +
+          '<\/script>'
+        );
+
+      return makeDataUrl(templated, 'html');
+    }
+
+    Object.keys(jsonFiles).forEach(function (file) {
+      axios.get("https://raw.githubusercontent.com/Jephuff/certified-pest-control/master/" + file)
+        .then(function (d) { data[jsonFiles[file]] = d.data; })
+    });
+
+    var PostPreview = createClass({
+      render: function () {
+        var entry = this.props.entry.toJS();
+        var newData = Object.keys(data).reduce(function (acc, key) {
+          acc[key] = data[key];
+          return acc;
+        }, {});
+        newData[jsonFiles[entry.path]] = entry.data;
+        return h('iframe', { frameborder: 0, src: getPageUrl(jsonFiles[entry.path], newData), style: { width: '100%', height: '100%' } });
+      }
+    });
+
+
+    CMS.registerPreviewTemplate("home", PostPreview);
+    CMS.registerPreviewTemplate("services", PostPreview);
+    CMS.registerPreviewTemplate("contact", PostPreview);
+
+    CMS.registerPreviewStyle(makeDataUrl('html, body, body > div, .frame-content { height: 100%; margin: 0; }', 'css'))
+  </script>
 </body>
+
 </html>
