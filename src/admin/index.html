@@ -10,6 +10,7 @@
 </head>
 
 <body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/immutable/3.8.2/immutable.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.1/axios.min.js"></script>
   <script src="https://unpkg.com/netlify-cms@^0.7.0/dist/cms.js"></script>
@@ -37,26 +38,39 @@
     }
 
     function getPageUrl(page, data) {
+      Handlebars.registerHelper('safe', function(context) {
+        function strip_tags (input, allowed) {
+          allowed = (((allowed || "") + "").toLowerCase().match(/<[a-z][a-z0-9]*>/g) || []).join(''); // making sure the allowed arg is a string containing only tags in lowercase (<a><b><c>)
+          var tags = /<\/?([a-z][a-z0-9]*)\b[^>]*>/gi,
+            commentsAndPhpTags = /<!--[\s\S]*?-->|<\?(?:php)?[\s\S]*?\?>/gi;
+          return input.replace(commentsAndPhpTags, '').replace(tags, function ($0, $1) {
+            return allowed.indexOf('<' + $1.toLowerCase() + '>') > -1 ? $0 : '';
+          });
+        }
+
+        var html = strip_tags(context, '<a>');
+        return html;
+      });
       var templated = Handlebars.compile(pages[page])(data)
         .replace(
         '<head>',
         '<head>\n' +
-          '<base href="https://certifiedpest.netlify.com/">\n' +
-          '<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.1/axios.min.js"><\/script>' +
-          '<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"><\/script>' +
-          '<script>\n' +
-            'var data = ' + JSON.stringify(data) + ';\n' +
-            'var pages = {};\n' +
-            makeDataUrl.toString() + ';\n' +
-            getPageUrl.toString() + ';\n' +
-            getPages.toString() + ';\n' +
-            'getPages().then(function() {' +
-              'document.querySelectorAll(\'a[href="index.html"],a[href="services.html"],a[href="contact.html"]\').forEach(function(el) {\n' +
-                'var page = el.href.match(/([^/]+)\.html/)[1];\n' +
-                'el.href = getPageUrl(page === "index" ? "home" : page, data);\n' +
-              '});\n' +
-            '});\n' +
-          '<\/script>'
+        '<base href="https://certifiedpest.netlify.com/">\n' +
+        '<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.1/axios.min.js"><\/script>' +
+        '<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"><\/script>' +
+        '<script>\n' +
+        'var data = ' + JSON.stringify(data) + ';\n' +
+        'var pages = {};\n' +
+        makeDataUrl.toString() + ';\n' +
+        getPageUrl.toString() + ';\n' +
+        getPages.toString() + ';\n' +
+        'getPages().then(function() {' +
+        'document.querySelectorAll(\'a[href="index.html"],a[href="services.html"],a[href="contact.html"]\').forEach(function(el) {\n' +
+        'var page = el.href.match(/([^/]+)\.html/)[1];\n' +
+        'el.href = getPageUrl(page === "index" ? "home" : page, data);\n' +
+        '});\n' +
+        '});\n' +
+        '<\/script>'
         );
 
       return makeDataUrl(templated, 'html');
@@ -85,6 +99,41 @@
     CMS.registerPreviewTemplate("contact", PostPreview);
 
     CMS.registerPreviewStyle(makeDataUrl('html, body, body > div, .frame-content { height: 100%; margin: 0; }', 'css'))
+
+
+    var SelectImage = createClass({
+      handleChange: function(e) {
+        this.props.onChange(e.target.value);
+      },
+      render: function () {
+        var value = this.props.value || ''
+        var field  = this.props.field;
+        var fieldOptions = field.get('options').toJS();
+
+        var options = (field.get('default', false) ? [] : [{ label: '', value: '' }])
+          .concat(fieldOptions.map(function(option) {
+            if (typeof option === 'string') {
+              return { label: option, value: option };
+            }
+            return Immutable.Map.isMap(option) ? option.toJS() : option;
+          }));
+        console.log(value)
+        return h('div', { style: {display: 'flex'}}, [
+          h(
+            'select',
+            { id: this.props.forID, value: value, onChange: this.handleChange },
+            options.map(function (option, idx) {
+              return h('option', { key: idx, value: option.value }, [option.label]);
+            })
+          ),
+          h(
+            'img',
+            { src: '/' + value, style: { height: 50 } },
+          )
+        ]);
+      }
+    });
+    CMS.registerWidget('selectImage', SelectImage)
   </script>
 </body>
 

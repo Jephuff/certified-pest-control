@@ -1,6 +1,7 @@
 const mkdirp = require('mkdirp');
 const gulp = require('gulp');
 var handlebars = require('gulp-compile-handlebars');
+const Handlebars = require('handlebars');
 const glob = require( 'glob' );
 const path = require( 'path' );
 var http = require('http');
@@ -13,6 +14,22 @@ const options = {}
 glob.sync( './data/**/*.json' ).forEach(function( file ) {
     templateData[file.replace(/\.json$/, '').replace(/^.*data\//, '')] = require( path.resolve( file ) );
 });
+
+Handlebars.registerHelper('safe', function(context) {
+  function strip_tags (input, allowed) {
+    allowed = (((allowed || "") + "").toLowerCase().match(/<[a-z][a-z0-9]*>/g) || []).join(''); // making sure the allowed arg is a string containing only tags in lowercase (<a><b><c>)
+    var tags = /<\/?([a-z][a-z0-9]*)\b[^>]*>/gi,
+      commentsAndPhpTags = /<!--[\s\S]*?-->|<\?(?:php)?[\s\S]*?\?>/gi;
+    return input.replace(commentsAndPhpTags, '').replace(tags, function ($0, $1) {
+      return allowed.indexOf('<' + $1.toLowerCase() + '>') > -1 ? $0 : '';
+    });
+  }
+
+  var html = strip_tags(context, '<a>');
+  return html;
+});
+
+console.log(templateData)
 
 gulp.task('copy-files', function() {
     return gulp.src(['src/**/*', '!src/**/*.html'])

@@ -73,33 +73,21 @@
 	<h2 class="no-margin-bottom">Why Choose Us?</h2>
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
-			<p class="intro center">It’s our goal to provide you with superior protection and elimination of unwanted pests.  We offer reliable, dependable and economical commercial and residential services.</p>
+			<p class="intro center">{{home.why.summary}}</p>
 			</div>
 		</div>
 		<div class="row padding-top">
 			<div class="col-md-10 col-md-offset-1">
 				<div class="row">
-					<div class="col-sm-4">
-						<div class="padding-block">
-						<img alt="Experience" src="links/experience.png">	
-						<h3 class="green">Exceptional Experience</h2>
-						<p class="center">We have over 20 years of knowledge and experience in all areas of pest control. Our technicians are well trained, and happy to review all aspects of your service and treatment.</p>
+					{{#each home.why.reasons}}
+						<div class="col-sm-4">
+							<div class="padding-block">
+							<img alt="Experience" src="{{this.image}}">	  
+							<h3 class="{{this.color}}">{{this.title}}</h2>
+							<p class="center">{{{safe this.detail}}}</p>
+							</div>
 						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="padding-block">
-						<img alt="Personal" src="links/personal.png">	
-						<h3 class="yellow">Personal Service</h2>
-						<p class="center">As a small, family company, we offer a personal level of service. We have known many of our customers since we opened in 1993. </p>
-						</div>	
-					</div>	
-					<div class="col-sm-4">
-						<div class="padding-block">
-						<img alt="Competitive" src="links/competitive.png">		
-						<h3 class="orange">Competitive Prices</h2>
-						<p class="center">Our pricing is fair and competitive. To help you save money in the long run we offer <a href="services.html">year-round or seasonal packages</a> to rid your home of rodents, ants, spiders and other insects.</p>
-						</div>	
-					</div>
+					{{/each}}
 				</div>
 			</div>				
 		</div>
