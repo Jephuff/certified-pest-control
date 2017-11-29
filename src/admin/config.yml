@@ -28,9 +28,6 @@ collections:
             name: why
             widget: object
             fields:
-              - name: summary
-                label: Summary
-                widget: string
               - name: reasons
                 label: Reasons
                 widget: list
