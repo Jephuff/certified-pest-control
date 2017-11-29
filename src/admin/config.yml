@@ -55,6 +55,16 @@ collections:
                   - label: Detail
                     name: detail
                     widget: string
+          - name: services
+            label: Services
+            widget: list
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Detail
+                name: detail
+                widget: string
       - name: contact
         label: Contact Page
         file: data/contact.json
