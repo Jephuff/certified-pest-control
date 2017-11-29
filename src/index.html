@@ -1,193 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certified Pest Control</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Certified Pest Control</title>
 
-    <link rel="shortcut icon" type="links/favicon.png" href="links/favicon.png"/>
+	<link rel="shortcut icon" type="links/favicon.png" href="links/favicon.png" />
 
 	<!-- CSS -->
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />
 	<link rel="stylesheet" type="text/css" href="grid.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="devices.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="devices.css" rel="stylesheet">
 
 </head>
 
 <body>
 
-<!--NAV-->
-<nav>
-	<div class="hidden-sm">
-		<div class="row dark center">
-			<div class="col-xxs-4">
-				<a href="index.html">Home</a>
-			</div>
-			<div class="col-xxs-4">	
-				<a href="services.html">Services</a>
-			</div>
-			<div class="col-xxs-4">	
-				<a href="contact.html">Contact</a></li>
-			</div>	
-		</div>
-		<div class="row top-margin">
-			<div class="col-xxs-8 col-xxs-offset-2 col-xs-6 col-xs-offset-3">
-				<a href="index.html"><img class="logo" alt="Logo" src="links/logo.png"></a>
-			</div>
-		</div>
-	</div>
-	<div class="container">
-		<div class="visible-sm">
-			<div class="row">
-				<div class="col-sm-4 col-md-3">
-					<a href="index.html"><img class="logo" alt="Logo" src="links/logo.png"></a>
+	<!--NAV-->
+	<nav>
+		<div class="hidden-sm">
+			<div class="row dark center">
+				<div class="col-xxs-4">
+					<a href="index.html">Home</a>
 				</div>
-				<div class="col-sm-8 col-md-9">
-					<div class="nav-bar">
-					<span class="toll-free">Toll free: {{contact.phone}}</span>
-					<ul class="nav">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="services.html">Services</a></li>
-						<li><a href="contact.html">Contact</a></li>
-					</ul>
+				<div class="col-xxs-4">
+					<a href="services.html">Services</a>
+				</div>
+				<div class="col-xxs-4">
+					<a href="contact.html">Contact</a>
+					</li>
+				</div>
+			</div>
+			<div class="row top-margin">
+				<div class="col-xxs-8 col-xxs-offset-2 col-xs-6 col-xs-offset-3">
+					<a href="index.html">
+						<img class="logo" alt="Logo" src="links/logo.png">
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="visible-sm">
+				<div class="row">
+					<div class="col-sm-4 col-md-3">
+						<a href="index.html">
+							<img class="logo" alt="Logo" src="links/logo.png">
+						</a>
+					</div>
+					<div class="col-sm-8 col-md-9">
+						<div class="nav-bar">
+							<span class="toll-free">Toll free: {{contact.phone}}</span>
+							<ul class="nav">
+								<li>
+									<a href="index.html">Home</a>
+								</li>
+								<li>
+									<a href="services.html">Services</a>
+								</li>
+								<li>
+									<a href="contact.html">Contact</a>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</nav>
+	</nav>
 
-<!--HEADER-->
-<header>
-	<div class="container">
-	<h1>A family-owned pest control company servicing the Greater Toronto Area, Durham, Northumberland and Quinte Region for more than 20 years</h1>
-	<p class="center">Certified Pest Control is licensed by the Ministry of the Environment.</p>
-	<a class="button" href="contact.html">Request a Service or free quote</a>
-	</div>
-</header>
-
-<!--WHY CHOOSE US-->
-<section class="why">
-	<div class="container">
-	<h2 class="no-margin-bottom">Why Choose Us?</h2>
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
-			<p class="intro center">It’s our goal to provide you with superior protection and elimination of unwanted pests.  We offer reliable, dependable and economical commercial and residential services.</p>
-			</div>
+	<!--HEADER-->
+	<header>
+		<div class="container">
+			<h1>A family-owned pest control company servicing the Greater Toronto Area, Durham, Northumberland and Quinte Region for more
+				than 20 years</h1>
+			<p class="center">Certified Pest Control is licensed by the Ministry of the Environment.</p>
+			<a class="button" href="contact.html">Request a Service or free quote</a>
 		</div>
-		<div class="row padding-top">
-			<div class="col-md-10 col-md-offset-1">
-				<div class="row">
-					{{#each home.why.reasons}}
+	</header>
+
+	<!--WHY CHOOSE US-->
+	<section class="why">
+		<div class="container">
+			<h2 class="no-margin-bottom">Why Choose Us?</h2>
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<p class="intro center">It’s our goal to provide you with superior protection and elimination of unwanted pests. We offer reliable, dependable
+						and economical commercial and residential services.</p>
+				</div>
+			</div>
+			<div class="row padding-top">
+				<div class="col-md-10 col-md-offset-1">
+					<div class="row">
+						{{#each home.why.reasons}}
 						<div class="col-sm-4">
 							<div class="padding-block">
-							<img alt="Experience" src="{{this.image}}">	  
-							<h3 class="{{this.color}}">{{this.title}}</h2>
-							<p class="center">{{{safe this.detail}}}</p>
+								<img alt="Experience" src="{{this.image}}">
+								<h3 class="{{this.color}}">{{this.title}}</h2>
+									<p class="center">{{{safe this.detail}}}</p>
 							</div>
 						</div>
-					{{/each}}
+						{{/each}}
+					</div>
 				</div>
-			</div>				
+			</div>
 		</div>
-	</div>	
-</section>
+	</section>
 
-<!--SERVICES-->
-<section class="services">
-	<div class="container">
-	<h2 class="white">Our Services</h2>
-	<div class="row">
-			<div class="col-sm-4">
-			<div class="box">
-				<div class="padding-block">
-				<h3 class="green">Bedbugs</h3>
-				<p>Bedbugs have made a comeback and have spread throughout Southern Ontario. We take a combined approach to dealing with these hardy pests and have been successful in eliminating them from apartments, homes and offices.</p>
+	<!--SERVICES-->
+	<section class="services">
+		<div class="container">
+			<h2 class="white">Our Services</h2>
+			{{#each home.services}}
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="box">
+						<div class="padding-block">
+							<h3 class="green">{{this.title}}</h3>
+							<p>{{this.detail}}</p>
+						</div>
+					</div>
 				</div>
-			</div>	
-		</div>		
-		<div class="col-sm-4">
-			<div class="box">
-				<div class="padding-block">
-				<h3 class="green">Insect Control</h3>
-				<p>Wasps, cockroaches, spiders and ants — we treat them all and many more. Our technicians are experienced and knowledgeable in all insect problems and can help remove them from your home or business.</p>
-				</div>
-			</div>	
+			</div>
+			{{/each}}
 		</div>
-		<div class="col-sm-4">
-			<div class="box">
-				<div class="padding-block">
-				<h3 class="green">Wildlife Removal</h3>
-				<p>We take a humane approach to removing or excluding animals from your home. Through our proven techniques the animals are encouraged to relocate to an alternate den site.</p>
-				</div>
-			</div>	
-		</div>
-	</div>	
-	<p class="padding-top center"><a href="services.html">Read More About Our Services</a></p>
-</section>
+		<p class="padding-top center">
+			<a href="services.html">Read More About Our Services</a>
+		</p>
+	</section>
 
-<!--QUESTIONS-->
-<section class="questions">
-	<div class="container">
-	<h2 class="center">Common Questions</h2>
-	<div class="row">
-		<div class="col-md-1 col-sm-2 col-xxs-12">
-		<img class="number" alt="One" src="links/one.png">
-		</div>
-		<div class="col-md-4 col-sm-4 col-xxs-12">
-		<p class="orange no-margin-bottom"><b>{{home.questions.0.question}}</b></p>
-		</div>
-		<div class="col-md-7 col-sm-6 col-xxs-12">
-		<p>{{home.questions.0.answer}}</p>
-		</div>
-	</div>	
-	<div class="row border-top">
-		<div class="col-md-1 col-sm-2 col-xxs-12">
-		<img class="number" alt="Two" src="links/two.png">
-		</div>
-		<div class="col-md-4 col-sm-4 col-xxs-12">
-		<p class="orange no-margin-bottom"><b>{{home.questions.1.question}}</b></p>
-		</div>
-		<div class="col-md-7 col-sm-6 col-xxs-12">
-		<p>{{home.questions.1.answer}}</p>
-		</div>
-	</div>
-	<div class="row padding-top">
-		<div class="col-sm-12">
-		<a class="button" href="contact.html">Request a Service or free quote</a>
-		</div>
-	</div>	
-</section>
+	<!--QUESTIONS-->
+	<section class="questions">
+		<div class="container">
+			<h2 class="center">Common Questions</h2>
+			{{#each home.questions}}
+				{{#if @index}}
+					<div class="row border-top">
+				{{else}}
+					<div class="row">
+				{{/if}}
+					<div class="col-md-1 col-sm-2 col-xxs-12">
+						<img class="number" alt="One" src="links/{{num @index}}.png"> 
+					</div>
+					<div class="col-md-4 col-sm-4 col-xxs-12">
+						<p class="orange no-margin-bottom">
+							<b>{{this.question}}</b>
+						</p>
+					</div>
+					<div class="col-md-7 col-sm-6 col-xxs-12">
+						<p>{{this.answer}}</p>
+					</div>
+				</div>
+			{{/each}}
+			<div class="row padding-top">
+				<div class="col-sm-12">
+					<a class="button" href="contact.html">Request a Service or free quote</a>
+				</div>
+			</div>
+	</section>
 
-<!--FOOTER-->
-<footer>
-	<div class="container">
-	<div class="row">
-		<div class="col-md-3 col-sm-3 col-xxs-7">
-		<ul class="fa-ul list">
-			<li><i class="fa-li fa fa-map-marker"> </i> Baltimore, ON</li>
-			<li><i class="fa-li fa fa-mobile "> </i> Toll free: {{contact.phone}}</li>
-			<li><i class="fa-li fa fa-envelope-o"> </i> <a href="mailto:info@certifiedpest.ca">info@certifiedpest.ca</a></li>
-		</ul>
-		</div> 
-		<div class="col-md-6 col-sm-5 col-xxs-5"> 
-		<p class="five-margin-bottom"><b>Follow Us</b></p> 
-		<a href="https://www.facebook.com/certifiedpest/?ref=br_rs"><i class="fa fa-2x fa-facebook-square"></i></a> 
-		<a href="#"><i class="fa fa-2x  fa-instagram"></i></a> 
-		<a href="https://www.linkedin.com/in/certifiedpest/"><i class="fa fa-2x fa-linkedin-square"></i></a> 
-		</div> 
-		<div class="col-md-3 col-sm-4 visible-sm"> 
-		<ul class="fa-ul list"> 
-			<li><i class="fa-li fa fa-check-square-o"> </i> Certified Pest Control is licensed by the Ministry of the Environment.</li> 
-		</ul> 
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12">
-		<p class="note border-top"> Copyright 2017 © Certified Pest Control</p>
-		</div>
-	</div>
-</footer>
+	<!--FOOTER-->
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 col-sm-3 col-xxs-7">
+					<ul class="fa-ul list">
+						<li>
+							<i class="fa-li fa fa-map-marker"> </i> Baltimore, ON</li>
+						<li>
+							<i class="fa-li fa fa-mobile "> </i> Toll free: {{contact.phone}}</li>
+						<li>
+							<i class="fa-li fa fa-envelope-o"> </i>
+							<a href="mailto:info@certifiedpest.ca">info@certifiedpest.ca</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-md-6 col-sm-5 col-xxs-5">
+					<p class="five-margin-bottom">
+						<b>Follow Us</b>
+					</p>
+					<a href="https://www.facebook.com/certifiedpest/?ref=br_rs">
+						<i class="fa fa-2x fa-facebook-square"></i>
+					</a>
+					<a href="#">
+						<i class="fa fa-2x  fa-instagram"></i>
+					</a>
+					<a href="https://www.linkedin.com/in/certifiedpest/">
+						<i class="fa fa-2x fa-linkedin-square"></i>
+					</a>
+				</div>
+				<div class="col-md-3 col-sm-4 visible-sm">
+					<ul class="fa-ul list">
+						<li>
+							<i class="fa-li fa fa-check-square-o"> </i> Certified Pest Control is licensed by the Ministry of the Environment.</li>
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<p class="note border-top"> Copyright 2017 © Certified Pest Control</p>
+				</div>
+			</div>
+	</footer>
 
 </body>

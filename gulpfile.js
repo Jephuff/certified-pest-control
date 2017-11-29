@@ -15,6 +15,21 @@ glob.sync( './data/**/*.json' ).forEach(function( file ) {
     templateData[file.replace(/\.json$/, '').replace(/^.*data\//, '')] = require( path.resolve( file ) );
 });
 
+Handlebars.registerHelper('num', function(context) {
+  switch('' + context) {
+    case '0':
+      return 'one';
+    case '1':
+      return 'two';
+    case '2':
+      return 'three';
+    case '3':
+      return 'four';
+    default:
+      return ''
+  }
+});
+
 Handlebars.registerHelper('safe', function(context) {
   function strip_tags (input, allowed) {
     allowed = (((allowed || "") + "").toLowerCase().match(/<[a-z][a-z0-9]*>/g) || []).join(''); // making sure the allowed arg is a string containing only tags in lowercase (<a><b><c>)

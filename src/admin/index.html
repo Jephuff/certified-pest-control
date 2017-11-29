@@ -51,6 +51,22 @@
         var html = strip_tags(context, '<a>');
         return html;
       });
+
+      Handlebars.registerHelper('num', function(context) {
+        switch('' + context) {
+          case '0':
+            return 'one';
+          case '1':
+            return 'two';
+          case '2':
+            return 'three';
+          case '3':
+            return 'four';
+          default:
+            return ''
+        }
+      });
+
       var templated = Handlebars.compile(pages[page])(data)
         .replace(
         '<head>',
