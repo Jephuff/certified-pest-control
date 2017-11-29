@@ -90,7 +90,7 @@
 		<div class="container map-overlay" style="padding: 40px; position: relative; width: 50%; margin: auto; max-width: 600px;">
 			<div class="form">
 				<h3>Contact Us</h3>
-				<form autocomplete="off" id="contact_us" method="post" role="form"></form>
+				<form autocomplete="off" role="form" name="contact" netlify>
 				<div class="form-group">
 					<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="firstname">How can we help you? </label>
 					<div class="col-md-7 col-lg-8 col-xxs-12">
@@ -159,7 +159,8 @@
 						<textarea class="form-control check" id="message" name="message" rows="6"></textarea>
 					</div>
 				</div>
-				<a class="button" href="contact.html">Send Request</a>
+				<button type="submit" class="button">Send Request</a>
+			</form>
 			</div>
 		</div>
 	</section>

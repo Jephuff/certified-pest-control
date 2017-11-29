@@ -177,6 +177,7 @@ header p {
 	color: rgba(255, 255, 255, 0.7);
 }
 .button {
+    position: relative;
     background: #3094D8;
     border-radius: 100px;
     font-size: .8em;
