@@ -25,5 +25,9 @@
     "gulp-compile-handlebars": "^0.6.1",
     "handlebars": "^4.0.11",
     "mkdirp": "^0.5.1"
+  },
+  "dependencies": {
+    "handlebars-helpers": "^0.10.0",
+    "helper-markdown": "^1.0.0"
   }
 }

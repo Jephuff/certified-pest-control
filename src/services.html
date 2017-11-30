@@ -58,7 +58,7 @@
 	</div>
 </nav>
 
-<!--HEADER-->
+<!--HEADER--> 
 <section class="services-header">	
 	<div class="container">
 		<div class="row">
@@ -70,90 +70,39 @@
 	</div>	
 </section>
 
+<style>
+	.wrap-bullets ul {
+		display: flex;
+		min-width: 50%;
+		flex-wrap: wrap;
+	}
+	.wrap-bullets ul li {
+		min-width: 50%;
+	}
+	
+</style>
 <!--SERVICES-->
 <section class="services-details">
 	<div class="container">
 		<div class="row padding-top">
-			<div class="col-sm-4">
-				<div class="box">
-				<img alt="Bedbugs" src="links/bedbug.jpg">
-					<div class="padding-block">
-					<h3 class="orange">Bedbugs</h3>
-					<p>Our treatment process consists of insecticide, traps and steam.</p>
-					<ul class="bullets">
-						<li>Insecticide plays an important but limited role in treatment. Bedbugs have developed a resistance to insecticide, therefore it is important to use small amounts that are strategically placed.</li>
-						<li>Traps are a valuable tool in the treatment process. The trap we find most effective is a simple trap that is placed under each leg of the bed frame. In addition to isolating the bed, these traps catch bedbugs that could be hiding in places away from the bed.</li>
-						<li>The main focus of our treatment is the use of steam. Although time consuming, steam is the most effective way to eliminate all stages of a bedbug infestation.</li>
-					</ul>
-					<p>Three treatments is the average needed to eliminate an infestation. Depending on the severity of the infestation there may be additional treatments required.</p>	
-					</div>
-				</div>
-			</div>	
-			<div class="col-sm-4">
-				<div class="box">
-				<img alt="Bedbugs" src="links/ant-hill.jpg">
-					<div class="padding-block">	
-					<h3 class="orange">Insect Control</h3>
-					<p>​When extra help is required, Integrated Pest Management (IPM) through Certified Pest Control offers reliable and predictable control of nuisance and/or damaging insect pests. Our programs are designed to control pests using a range of approaches, including the responsible and professional use of pesticides. They prove very effective for controlling and eliminating areas where infestations are forecasted.</p>
-					<p>​Timely applications are absolutely essential when controlling insects. At CPC, we monitor local insect pest populations and track their lifecycles in order to forecast potential infestations, and to time the application of insecticides for the most effective control.</p>
-					<p>​Our technicians are licensed and trained to control insect pests. We will work with you and instruct you on what to do before and after an application in order to achieve the best results.</p>
-					<p>​Common insects we deal with are:</p>
-						<div class="row">
-							<div class="col-sm-6">
-							<ul class="bullets">
-								<li>Ants</li>
-								<li>Bedbugs</li>
-								<li>Cockroaches</li>
-							</ul>
-							</div>	
-							<div class="col-sm-6">
-							<ul class="bullets">
-								<li>Earwigs</li>             
-								<li>Spiders</li>
-								<li>Wasps</li>
-							</ul> 
-							</div>
+			{{#each services.services}}
+				<div class="col-sm-4">
+					<div class="box">
+					<img alt="{{this.title}}" src="{{dist this.image}}">
+						<div class="padding-block wrap-bullets">
+							<h3 class="orange">{{this.title}}</h3>
+							{{{markdown this.description}}}	
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="col-sm-4">
-				<div class="box">
-				<img alt="Bedbugs" src="links/racoon.jpg">
-					<div class="padding-block">	
-					<h3 class="orange">Wildlife Removal</h3>
-					<p>Wildlife is a big part of our environment. Unfotunately there are opportunistic animals that often make their homes inside or on our property. </p>
-					<p>At Certified Pest Control we take a humane approach to removing or excluding these animals from your home. The animals are never harmed and as little stress as possible is caused in removing the animals. Mother and babies are kept together and through our proven techniques the animals are encouraged to relocate to an alternate den site.</p>
-					<p>Common wildlife animals we deal with are:</p>
-						<div class="row">
-							<div class="col-sm-6">
-							<ul class="bullets">
-								<li>Bats</li>
-								<li>Birds</li>
-								<li>Chipmunks</li>
-								<li>Mice</li>
-								<li>Opossums</li>
-							</ul>
-							</div>
-							<div class="col-sm-6">
-							<ul class="bullets">	
-								<li>Racoons</li>              
-								<li>Rats</li>
-								<li>Snakes</li>
-								<li>Squirrels</li>
-							</ul>  
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>				
+			{{/each}}			
 		</div>
 	</div>	
 </section>
 
 <!--PACKAGES-->
 <section class="packages">
-<a name="gold"></a>	
+	<a name="gold"></a>	
 	<div class="container">
 		<div class="row center">
 			<div class="col-sm-12">
@@ -164,20 +113,21 @@
 					<h3 class="gold">Gold Package</h3>
 						<div class="padding-block">
 						<ul class="border-bottom">
-							<li><b>3 visits</b></li>
-							<li>May</li>
-							<li>July</li>
-							<li>September</li>
-						</ul>
+							<li><b>{{length services.packages.gold}} visits</b></li>
+							{{#each services.packages.gold}}
+								<li>{{this.visit}}</li>
+							{{/each}}
+						</ul>  
 						</div>	
 					</div>
 					<div class="col-sm-4 col-xs-12 col-xxs-12 no-padding relative">
 					<h3 class="silver">Silver Package</h3>
 						<div class="padding-block">
 						<ul class="border-bottom">
-							<li><b>2 visits</b></li>
-							<li>May/June</li>
-							<li>August/September</li>
+							<li><b>{{length services.packages.silver}} visits</b></li>
+							{{#each services.packages.silver}}
+								<li>{{this.visit}}</li>
+							{{/each}}
 						</ul>
 						</div>	
 					</div>	
@@ -185,8 +135,10 @@
 					<h3 class="bronze">Bronze Package</h3>
 						<div class="padding-block">
 						<ul class="border-bottom">
-							<li><b>1 visit</b></li>
-							<li>May/June</li>
+							<li><b>{{length services.packages.bronze}} visit</b></li>
+							{{#each services.packages.bronze}}
+								<li>{{this.visit}}</li>
+							{{/each}}
 						</ul>
 						<p class="note bottom right"><i>(dates are approximate)</i></p>
 						</div>	

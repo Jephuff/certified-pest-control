@@ -7,12 +7,19 @@ const path = require( 'path' );
 var http = require('http');
 var ecstatic = require('ecstatic');
 
+var helpers = require('handlebars-helpers')();
+
 const templateData = {};
 
 const options = {}
 
 glob.sync( './data/**/*.json' ).forEach(function( file ) {
     templateData[file.replace(/\.json$/, '').replace(/^.*data\//, '')] = require( path.resolve( file ) );
+});
+
+Handlebars.registerHelper('dist', function(context) {
+  console.log(context);
+  return context.replace('/src/', '');
 });
 
 Handlebars.registerHelper('num', function(context) {
