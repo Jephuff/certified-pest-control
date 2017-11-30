@@ -435,3 +435,7 @@ footer .border-top {
     font-size: .8em;
     opacity: .8;
 }
+
+.hidden {
+    display: none;
+}
