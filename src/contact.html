@@ -90,76 +90,80 @@
 		<div class="container map-overlay" style="padding: 40px; position: relative; width: 50%; margin: auto; max-width: 600px;">
 			<div class="form">
 				<h3>Contact Us</h3>
-				<form autocomplete="off" id="contact_us" method="post" role="form"></form>
-				<div class="form-group">
-					<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="firstname">How can we help you? </label>
-					<div class="col-md-7 col-lg-8 col-xxs-12">
-						<select class="form-control" id="year" name="year" tabindex="12">
-							<option value="Request a Free Quote">Request a free quote</option>
-							<option value="General Inquiries">General inquiries</option>
-						</select>
+				<form autocomplete="off" role="form" name="contact" netlify-honeypot="bot-field" netlify>
+					<p class="hidden">
+						<label>Don’t fill this out: <input name="bot-field"></label>
+					</p>
+					<div class="form-group">
+						<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="firstname">How can we help you? </label>
+						<div class="col-md-7 col-lg-8 col-xxs-12">
+							<select class="form-control" id="year" name="year" tabindex="12">
+								<option value="Request a Free Quote">Request a free quote</option>
+								<option value="General Inquiries">General inquiries</option>
+							</select>
+						</div>
 					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="firstname">Package type </label>
-					<div class="col-md-7 col-lg-8 col-xxs-12">
-						<select class="form-control" id="year" name="year" tabindex="12">
-							<option value="gold">Gold</option>
-							<option value="silver">Silver</option>
-							<option value="bronze">Bronze</option>
-							<option value="unsure">Unsure</option>
-						</select>
+					<div class="form-group">
+						<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="firstname">Package type </label>
+						<div class="col-md-7 col-lg-8 col-xxs-12">
+							<select class="form-control" id="year" name="year" tabindex="12">
+								<option value="gold">Gold</option>
+								<option value="silver">Silver</option>
+								<option value="bronze">Bronze</option>
+								<option value="unsure">Unsure</option>
+							</select>
+						</div>
 					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="firstname">Full name
-						<span class="orange">*</span>
-					</label>
-					<div class="col-md-7 col-lg-8 col-xxs-12">
-						<input class="form-control" id="fullname" name="fullname" type="text">
+					<div class="form-group">
+						<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="firstname">Full name
+							<span class="orange">*</span>
+						</label>
+						<div class="col-md-7 col-lg-8 col-xxs-12">
+							<input required class="form-control" id="fullname" name="fullname" type="text">
+						</div>
 					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="email">Email
-						<span class="orange">*</span>
-					</label>
-					<div class="col-md-7 col-lg-8 col-xxs-12">
-						<input class="form-control" id="email" name="email" type="text">
+					<div class="form-group">
+						<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="email">Email
+							<span class="orange">*</span>
+						</label>
+						<div class="col-md-7 col-lg-8 col-xxs-12">
+							<input required  class="form-control" id="email" name="email" type="email">
+						</div>
 					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="phone">Phone</label>
-					<div class="col-md-7 col-lg-8 col-xxs-12">
-						<input class="form-control check" id="phone" name="phone" type="text">
+					<div class="form-group">
+						<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="phone">Phone</label>
+						<div class="col-md-7 col-lg-8 col-xxs-12">
+							<input class="form-control check" id="phone" name="phone" type="tel">
+						</div>
 					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="street">Street</label>
-					<div class="col-md-7 col-lg-8 col-xxs-12">
-						<input class="form-control check" id="street" name="street" type="text">
+					<div class="form-group">
+						<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="street">Street</label>
+						<div class="col-md-7 col-lg-8 col-xxs-12">
+							<input class="form-control check" id="street" name="street" type="text">
+						</div>
 					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="city">City</label>
-					<div class="col-md-7 col-lg-8 col-xxs-12">
-						<input class="form-control check" id="city" name="city" type="text">
+					<div class="form-group">
+						<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="city">City</label>
+						<div class="col-md-7 col-lg-8 col-xxs-12">
+							<input class="form-control check" id="city" name="city" type="text">
+						</div>
 					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="postalcode">Postal Code</label>
-					<div class="col-md-7 col-lg-8 col-xxs-12">
-						<input class="form-control check" id="postalcode" name="postalcode" type="text">
+					<div class="form-group">
+						<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="postalcode">Postal Code</label>
+						<div class="col-md-7 col-lg-8 col-xxs-12">
+							<input class="form-control check" id="postalcode" name="postalcode" type="text">
+						</div>
 					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-md-5 col-lg-4 col-xxs-12 control-label" or="message">Message
-						<span class="orange">*</span>
-					</label>
-					<div class="col-md-7 col-lg-8 col-xxs-12">
-						<textarea class="form-control check" id="message" name="message" rows="6"></textarea>
+					<div class="form-group">
+						<label class="col-md-5 col-lg-4 col-xxs-12 control-label" or="message">Message
+							<span class="orange">*</span>
+						</label>
+						<div class="col-md-7 col-lg-8 col-xxs-12">
+							<textarea required  class="form-control check" id="message" name="message" rows="6"></textarea>
+						</div>
 					</div>
-				</div>
-				<a class="button" href="contact.html">Send Request</a>
+					<button type="submit" class="button" style="cursor: pointer;">Send Request</a>
+				</form>
 			</div>
 		</div>
 	</section>
