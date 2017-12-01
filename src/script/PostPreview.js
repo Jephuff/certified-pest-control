@@ -36,7 +36,7 @@ CMS.registerPreviewTemplate("contact", PostPreview);
 
 CMS.registerPreviewStyle(
   makeDataUrl(
-    "html, body, body > div, .frame-content { height: 100%; margin: 0; }",
+    "html, body, body > div, .frame-content { height: calc(100% - 1px); margin: 0; }",
     "css"
   )
 );
