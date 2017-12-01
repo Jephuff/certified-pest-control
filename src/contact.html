@@ -236,7 +236,7 @@
 			map.addListener('projection_changed', function () {
 				if (!centered) {
 					centered = true;
-					const center = window.innerWidth / 2;
+					var center = window.innerWidth / 2;
 					var overlay = document.querySelector('.map-overlay');
 					var leftPostion = overlay.offsetWidth / 2 + 10;
 					offsetCenter(latlng, leftPostion, (overlay.offsetWidth) / 2  - 100);

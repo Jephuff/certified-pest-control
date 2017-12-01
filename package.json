@@ -27,7 +27,14 @@
     "mkdirp": "^0.5.1"
   },
   "dependencies": {
+    "axios": "^0.17.1",
+    "browserify": "^14.5.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
     "handlebars-helpers": "^0.10.0",
-    "helper-markdown": "^1.0.0"
+    "helper-markdown": "^1.0.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
   }
 }
