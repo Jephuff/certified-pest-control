@@ -63,7 +63,7 @@ gulp.task('build', ['copy-files', 'copy-html', 'bundle']);
 gulp.task('default', ['build'], function(){
   http.createServer(
     ecstatic({ root: __dirname + '/dist' })
-  ).listen(8081);
+  ).listen(8080);
 
   gulp.watch('src/**/*.*', function(){
     gulp.run('build');

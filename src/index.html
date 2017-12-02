@@ -112,8 +112,8 @@
 	<section class="services">
 		<div class="container">
 			<h2 class="white">Our Services</h2>
-			{{#each home.services}}
 			<div class="row">
+				{{#each home.services}}
 				<div class="col-sm-4">
 					<div class="box">
 						<div class="padding-block">
@@ -122,9 +122,8 @@
 						</div>
 					</div>
 				</div>
-				
-			{{/each}}
-			</div>	
+				{{/each}}
+			</div>
 		</div>
 		<p class="padding-top center">
 			<a href="services.html">Read More About Our Services</a>
@@ -135,14 +134,13 @@
 	<section class="questions">
 		<div class="container">
 			<h2 class="center">Common Questions</h2>
-			{{#each home.questions}}
-				{{#if @index}}
-					<div class="row border-top">
+			{{#each home.questions}} {{#if @index}}
+			<div class="row border-top">
 				{{else}}
-					<div class="row">
-				{{/if}}
+				<div class="row">
+					{{/if}}
 					<div class="col-md-1 col-sm-2 col-xxs-12">
-						<img class="number" alt="{{num @index}}" src="links/{{num @index}}.png"> 
+						<img class="number" alt="{{num @index}}" src="links/{{num @index}}.png">
 					</div>
 					<div class="col-md-4 col-sm-4 col-xxs-12">
 						<p class="orange no-margin-bottom">
@@ -153,12 +151,12 @@
 						<p>{{this.answer}}</p>
 					</div>
 				</div>
-			{{/each}}
-			<div class="row padding-top">
-				<div class="col-sm-12">
-					<a class="button" href="contact.html">Request a Service or free quote</a>
+				{{/each}}
+				<div class="row padding-top">
+					<div class="col-sm-12">
+						<a class="button" href="contact.html">Request a Service or free quote</a>
+					</div>
 				</div>
-			</div>
 	</section>
 
 	<!--FOOTER-->
