@@ -389,13 +389,7 @@ header p {
 .form-group {
   margin-right: -15px;
   margin-left: -15px;
-}
-
-.only-request {
-  display: none;
-}
-.request-form .only-request {
-  display: block;
+  overflow: hidden;
 }
 
 label {

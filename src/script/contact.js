@@ -1,9 +1,11 @@
+var tween = require("gsap").TweenLite;
+
 var formTypes = {
   "Request a Free Quote": "request-form",
   "General Inquiries": "general-form"
 };
 
-function onFormTypeChange(e) {
+window.onFormTypeChange = function onFormTypeChange(e) {
   var classList = document.querySelector(".form form").classList;
 
   Object.keys(formTypes).forEach(function(key) {
@@ -12,26 +14,49 @@ function onFormTypeChange(e) {
 
   classList.add(formTypes[e.value]);
 
-  Array.prototype.slice
-    .call(document.querySelectorAll(".form .request-form .only-request [name]"))
-    .forEach(function(el) {
-      if (el.dataset.required) {
-        el.required = true;
+  var elementsIn = Array.prototype.slice.call(
+    document.querySelectorAll(".form .request-form .only-request")
+  );
+  var elementsOut = Array.prototype.slice.call(
+    document.querySelectorAll(".form .general-form .only-request")
+  );
+
+  elementsOut.forEach(function(el) {
+    el.dataset.height = el.offsetHeight;
+  });
+
+  elementsIn.forEach(function(parent) {
+    tween.to(parent, 0.5, {
+      ease: Expo.easeOut,
+      opacity: 1,
+      height: parent.dataset.height,
+      onComplete: function() {
+        var el = parent.querySelector("[name]");
+        if (el.dataset.required) {
+          el.required = true;
+        }
       }
     });
+  });
 
-  Array.prototype.slice
-    .call(document.querySelectorAll(".form .general-form .only-request [name]"))
-    .forEach(function(el) {
-      el.value = "";
-      if (el.required) {
-        el.required = false;
-        el.dataset.required = true;
-      }
-    });
-}
+  tween.to(elementsOut, 0.5, {
+    ease: Expo.easeOut,
+    opacity: 0,
+    height: 0,
+    onComplete: function() {
+      elementsOut.forEach(function(parent) {
+        var el = parent.querySelector("[name]");
+        el.value = "";
+        if (el.required) {
+          el.required = false;
+          el.dataset.required = true;
+        }
+      });
+    }
+  });
+};
 
-function initMap() {
+window.initMap = function initMap() {
   var latlng = new google.maps.LatLng(43.992606, -78.023462);
   var map = new google.maps.Map(document.getElementById("map"), {
     center: latlng,
@@ -97,4 +122,4 @@ function initMap() {
       }
     }
   );
-}
+};
