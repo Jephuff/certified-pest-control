@@ -29,6 +29,7 @@ window.onFormTypeChange = function onFormTypeChange(e) {
     tween.to(parent, 0.5, {
       ease: Expo.easeOut,
       opacity: 1,
+      y: "0%",
       height: parent.dataset.height,
       onComplete: function() {
         var el = parent.querySelector("[name]");
@@ -43,6 +44,7 @@ window.onFormTypeChange = function onFormTypeChange(e) {
     ease: Expo.easeOut,
     opacity: 0,
     height: 0,
+    y: "-100%",
     onComplete: function() {
       elementsOut.forEach(function(parent) {
         var el = parent.querySelector("[name]");
