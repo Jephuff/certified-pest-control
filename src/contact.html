@@ -16,7 +16,6 @@
 </head>
 
 <body>
-
 	<!--NAV-->
 	<nav>
 		<div class="hidden-sm">
@@ -90,20 +89,22 @@
 		<div class="container map-overlay" style="padding: 40px; position: relative; width: 50%; margin: auto; max-width: 600px;">
 			<div class="form">
 				<h3>Contact Us</h3>
-				<form autocomplete="off" role="form" name="contact" netlify-honeypot="bot-field" netlify>
+				<form class="request-form" autocomplete="off" role="form" name="contact" netlify-honeypot="bot-field" netlify>
 					<p class="hidden">
-						<label>Don’t fill this out: <input name="bot-field"></label>
+						<label>Don’t fill this out:
+							<input name="bot-field">
+						</label>
 					</p>
 					<div class="form-group">
 						<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="firstname">How can we help you? </label>
 						<div class="col-md-7 col-lg-8 col-xxs-12">
-							<select class="form-control" id="category" name="category" tabindex="12">
+							<select class="form-control" id="category" name="category" tabindex="12" onchange="onFormTypeChange(this)">
 								<option value="Request a Free Quote">Request a free quote</option>
 								<option value="General Inquiries">General inquiries</option>
 							</select>
 						</div>
 					</div>
-					<div class="form-group">
+					<div class="form-group  only-request">
 						<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="firstname">Package type </label>
 						<div class="col-md-7 col-lg-8 col-xxs-12">
 							<select class="form-control" id="package" name="package" tabindex="12">
@@ -127,7 +128,7 @@
 							<span class="orange">*</span>
 						</label>
 						<div class="col-md-7 col-lg-8 col-xxs-12">
-							<input required  class="form-control" id="email" name="email" type="email">
+							<input required class="form-control" id="email" name="email" type="email">
 						</div>
 					</div>
 					<div class="form-group">
@@ -136,19 +137,19 @@
 							<input class="form-control check" id="phone" name="phone" type="tel">
 						</div>
 					</div>
-					<div class="form-group">
+					<div class="form-group only-request">
 						<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="street">Street</label>
 						<div class="col-md-7 col-lg-8 col-xxs-12">
 							<input class="form-control check" id="street" name="street" type="text">
 						</div>
 					</div>
-					<div class="form-group">
+					<div class="form-group only-request">
 						<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="city">City</label>
 						<div class="col-md-7 col-lg-8 col-xxs-12">
 							<input class="form-control check" id="city" name="city" type="text">
 						</div>
 					</div>
-					<div class="form-group">
+					<div class="form-group only-request">
 						<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="postalcode">Postal Code</label>
 						<div class="col-md-7 col-lg-8 col-xxs-12">
 							<input class="form-control check" id="postalcode" name="postalcode" type="text">
@@ -159,7 +160,7 @@
 							<span class="orange">*</span>
 						</label>
 						<div class="col-md-7 col-lg-8 col-xxs-12">
-							<textarea required  class="form-control check" id="message" name="message" rows="6"></textarea>
+							<textarea required class="form-control check" id="message" name="message" rows="6"></textarea>
 						</div>
 					</div>
 					<button type="submit" class="button" style="cursor: pointer;">Send Request</a>
@@ -183,7 +184,7 @@
 							<a href="mailto:{{contact.email}}">{{contact.email}}</a>
 						</li>
 					</ul>
-				</div> 
+				</div>
 				<div class="col-md-6 col-sm-5 col-xxs-5">
 					<p class="five-margin-bottom">
 						<b>Follow Us</b>
@@ -211,77 +212,7 @@
 				</div>
 			</div>
 	</footer>
-	<style>
-		#map {
-			-webkit-filter: grayscale(100%);
-    				filter: grayscale(100%);
-		}
-		/* .gm-style-pbt {
-			min-width: 50%;
-			width: 50%;
-			width: calc(100% - 640px);
-			text-align: center;
-		} */
-	</style>
-	<script>
-		function initMap() {
-			var latlng = new google.maps.LatLng(43.992606, -78.023462);
-			var map = new google.maps.Map(document.getElementById('map'), {
-				center: latlng,
-				zoom: 10,
-				disableDefaultUI: true,
-			});
-
-			var centered = false;
-			map.addListener('projection_changed', function () {
-				if (!centered) {
-					centered = true;
-					var center = window.innerWidth / 2;
-					var overlay = document.querySelector('.map-overlay');
-					var leftPostion = overlay.offsetWidth / 2 + 10;
-					offsetCenter(latlng, leftPostion, (overlay.offsetWidth) / 2  - 100);
-				}
-			});
-
-			function offsetCenter(latlng, offsetx, offsety) {
-
-				// latlng is the apparent centre-point
-				// offsetx is the distance you want that point to move to the right, in pixels
-				// offsety is the distance you want that point to move upwards, in pixels
-				// offset can be negative
-				// offsetx and offsety are both optional
-
-				var scale = Math.pow(2, map.getZoom());
-				var worldCoordinateCenter = map.getProjection().fromLatLngToPoint(latlng);
-				var pixelOffset = new google.maps.Point((offsetx / scale) || 0, (offsety / scale) || 0);
-
-				var worldCoordinateNewCenter = new google.maps.Point(
-					worldCoordinateCenter.x - pixelOffset.x,
-					worldCoordinateCenter.y + pixelOffset.y
-				);
-
-				var newCenter = map.getProjection().fromPointToLatLng(worldCoordinateNewCenter);
-
-				map.setCenter(newCenter);
-			}
-
-			var service = new google.maps.places.PlacesService(map);
-
-			service.getDetails({
-				placeId: 'ChIJOUaZBs7d1YkR4lHI05GKpRk'
-			}, function (place, status) {
-				if (status === google.maps.places.PlacesServiceStatus.OK) {
-					var marker = new google.maps.Marker({
-						map: map,
-						position: place.geometry.location
-					});
-					google.maps.event.addListener(marker, 'click', function () {
-						window.open('https://www.google.ca/maps/place/Grafton,+ON+K0K+2G0/@43.9923162,-78.0345331,14.63z/data=!4m13!1m7!3m6!1s0x89d5ddce06994639:0x19a58a91d3c851e2!2sGrafton,+ON+K0K+2G0!3b1!8m2!3d43.992634!4d-78.023383!3m4!1s0x89d5ddce06994639:0x19a58a91d3c851e2!8m2!3d43.992634!4d-78.023383', '_BLANK')
-					});
-				}
-			});
-		}
-	</script>
+	<script src="script/contact.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5jg7LfSimPCet2TOxvTv0O8yHsTFwimo&callback=initMap&libraries=places"
 	 async defer></script>
 </body>
