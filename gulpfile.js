@@ -6,6 +6,7 @@ var path = require( 'path' );
 var http = require('http');
 var ecstatic = require('ecstatic');
 var build = require('./src/script/build'); // adds handlebar helpers
+var tingpng = require('gulp-tinypng');
 
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
@@ -46,6 +47,12 @@ gulp.task('bundle', function () {
   bundle('cms.js');
   bundle('embeded.js');
 });
+
+gulp.task('images', function () {
+  gulp.src(['src/**/*.jpg', 'src/**/*.png'])
+    .pipe(tingpng(''))
+    .pipe(gulp.dest('./src'));
+})
 
 gulp.task('copy-files', function() {
     return gulp.src(['src/**/*', '!src/**/*.html', '!src/script/**/*.*'])
