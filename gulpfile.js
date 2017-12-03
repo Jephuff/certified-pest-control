@@ -103,7 +103,8 @@ gulp.task("reload-css", ["css"], reload);
 gulp.task("reload-html", ["html"], reload);
 gulp.task("reload-copy-files", ["copy-files"], reload);
 
-gulp.task("default", ["copy-files", "html", "js", "css"], function() {
+gulp.task("build", ["copy-files", "html", "js", "css"]);
+gulp.task("default", ["build"], function() {
   browserSync.init({
     server: {
       baseDir: "./dist"
