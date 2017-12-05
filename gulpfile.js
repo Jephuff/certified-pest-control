@@ -67,17 +67,7 @@ function bundle(file) {
 }
 
 gulp.task("js", function() {
-  let contact = gulp.src("src/script/contact.js");
-
-  if (isProd) {
-    contact = contact.pipe(uglify());
-  }
-
-  return merge(
-    bundle("cms.js"),
-    bundle("embeded.js"),
-    contact.pipe(gulp.dest("./dist/script"))
-  );
+  return merge(bundle("cms.js"), bundle("embeded.js"), bundle("contact.js"));
 });
 
 gulp.task("copy-files", function() {
