@@ -427,7 +427,7 @@ footer {
 footer a {
   color: #ffffff;
 }
-footer a:hover {
+footer li a:hover {
   text-decoration: underline;
 }
 footer .fa {
