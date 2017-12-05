@@ -30,10 +30,14 @@ h3 {
   font-size: 1.2em;
   margin: 10px 0px;
 }
-ul.bullets {
-  list-style-type: disc;
+.wrap-bullets ul {
+  display: flex;
+  min-width: 50%;
+  flex-wrap: wrap;
   padding: 0px 0px 0px 18px;
-  margin: 0px 0px 15px 0px;
+}
+.wrap-bullets ul li {
+  min-width: 50%;
 }
 ul li {
   margin-bottom: 5px;
