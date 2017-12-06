@@ -14,6 +14,20 @@
 	<link rel="stylesheet" type="text/css" href="style.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="devices.css" rel="stylesheet">
 
+	<script>
+  	window.fcSettings = {
+    token: "d0388eaf-cf3f-45c0-b698-08463d176a2b",
+    host: "https://wchat.freshchat.com",
+    externalId: "john.doe1987",     // user's id unique to your system
+    firstName: "John",              // user's first name
+    lastName: "Doe",                // user's last name
+    email: "john.doe@gmail.com",    // user's email address
+    phone: "8668323090",            // phone number without country code
+    phoneCountryCode: "+1"          // phone's country code
+	 };
+	</script>
+	<script src="https://wchat.freshchat.com/js/widget.js" async></script>
+
 </head>
 
 <body>
@@ -171,7 +185,7 @@
 						<ul>
 							{{#each services.addOns}}
 							<li>
-								<i class="fa fa-check" aria-hidden="true"></i>{{this.addOn}}</li>
+								<i class="fa fa-check" aria-hidden="true"></i> {{this.addOn}}</li>
 							{{/each}}
 						</ul>
 					</div>
