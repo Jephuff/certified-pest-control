@@ -13,17 +13,6 @@ collections:
         description: Home Page Content
         preview: false
         fields:
-          - name: questions
-            label: Common Questions
-            description: Top 2 questions will be displayed
-            widget: list
-            fields:
-              - label: Question
-                name: question
-                widget: string
-              - label: Answer
-                name: answer
-                widget: string
           - label: Why Choose Us
             name: why
             widget: object
@@ -65,6 +54,17 @@ collections:
               - label: Detail
                 name: detail
                 widget: string
+          - name: questions
+            label: Common Questions
+            description: Top 2 questions will be displayed
+            widget: list
+            fields:
+              - label: Question
+                name: question
+                widget: string
+              - label: Answer
+                name: answer
+                widget: string
       - name: contact
         label: Contact Page
         file: data/contact.json
@@ -76,7 +76,7 @@ collections:
             widget: string
           - label: Email
             name: email
-            widget: string            
+            widget: string
       - name: services
         label: Services Page
         file: data/services.json
