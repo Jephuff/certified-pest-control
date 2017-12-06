@@ -201,9 +201,6 @@
   .contact-form .button {
     box-shadow: none;
   }
-  .container.map-overlay {
-  width: 50%; 
-  }
 }
 
 /*DESKTOP*/
@@ -281,6 +278,9 @@
   /*CONTACT FORM*/
   .form-group label {
     text-align: right;
+  }
+  .container.map-overlay {
+  width: 50%; 
   }
 }
 
