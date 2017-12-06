@@ -100,8 +100,8 @@ collections:
             label: Packages
             widget: object
             fields:
-              - name: bronze
-                label: Bronze Visits
+              - name: gold
+                label: Gold Visits
                 widget: list
                 fields:
                   - widget: string
@@ -114,8 +114,8 @@ collections:
                   - widget: string
                     name: visit
                     label: Visit
-              - name: gold
-                label: Gold Visits
+              - name: bronze
+                label: Bronze Visits
                 widget: list
                 fields:
                   - widget: string
