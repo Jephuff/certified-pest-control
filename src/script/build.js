@@ -2,7 +2,7 @@ var Handlebars = require("handlebars");
 require("handlebars-helpers")();
 
 Handlebars.registerHelper("dist", function(context) {
-  return context.replace("/src/", "");
+  return (context || "").replace("/src/", "");
 });
 
 Handlebars.registerHelper("num", function(context) {
@@ -40,4 +40,4 @@ Handlebars.registerHelper("safe", function(context) {
 
 module.exports = function(template, data) {
   return Handlebars.compile(template)(data);
-}
+};
