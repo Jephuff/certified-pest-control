@@ -334,9 +334,6 @@ header p {
   background: #e5eaeb url(links/packages.jpg) no-repeat scroll center top /
     cover;
 }
-.white-background {
-  background: rgba(255, 255, 255, 0.8);
-}
 .white-background > .col-sm-4 {
   padding-right: 0px;
   padding-left: 0px;
@@ -364,7 +361,7 @@ header p {
   list-style-type: none;
 }
 .packages ul.border-bottom li {
-  border-bottom: 1px dotted #bbbbbb;
+  border-bottom: 1px dotted rgba(255,255,255,.3);
   padding-bottom: 5px;
 }
 .small {
@@ -462,10 +459,10 @@ footer .fa {
 }
 a > .fa:hover {
   opacity: 1;
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  transition-duration: 0.5s;
+  -webkit-transition-duration: 1s;
+  -moz-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  transition-duration: 1s;
 }
 .fa-facebook-square,
 .fa-instagram,
