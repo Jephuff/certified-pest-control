@@ -15,16 +15,16 @@
 	<link rel="stylesheet" type="text/css" href="devices.css" rel="stylesheet">
 
 	<script>
-  	window.fcSettings = {
-    token: "d0388eaf-cf3f-45c0-b698-08463d176a2b",
-    host: "https://wchat.freshchat.com",
-    externalId: "john.doe1987",     // user's id unique to your system
-    firstName: "John",              // user's first name
-    lastName: "Doe",                // user's last name
-    email: "john.doe@gmail.com",    // user's email address
-    phone: "8668323090",            // phone number without country code
-    phoneCountryCode: "+1"          // phone's country code
-	 };
+		window.fcSettings = {
+			token: "d0388eaf-cf3f-45c0-b698-08463d176a2b",
+			host: "https://wchat.freshchat.com",
+			externalId: "john.doe1987",     // user's id unique to your system
+			firstName: "John",              // user's first name
+			lastName: "Doe",                // user's last name
+			email: "john.doe@gmail.com",    // user's email address
+			phone: "8668323090",            // phone number without country code
+			phoneCountryCode: "+1"          // phone's country code
+		};
 	</script>
 	<script src="https://wchat.freshchat.com/js/widget.js" async></script>
 </head>
@@ -147,29 +147,26 @@
 	<section class="questions">
 		<div class="container">
 			<h2 class="center">Common Questions</h2>
-			{{#each home.questions}} {{#if @index}}
-			<div class="row border-top">
-				{{else}}
-				<div class="row">
-					{{/if}}
-					<div class="col-md-1 col-sm-2 col-xxs-12">
-						<img class="number" alt="{{num @index}}" src="links/{{num @index}}.png">
-					</div>
-					<div class="col-md-4 col-sm-4 col-xxs-12">
-						<p class="orange no-margin-bottom">
-							<b>{{this.question}}</b>
-						</p>
-					</div>
-					<div class="col-md-7 col-sm-6 col-xxs-12">
-						<p>{{this.answer}}</p>
-					</div>
+			{{#each home.questions}}{{#lt @index 4}}
+			<div class="row{{#if @index}} border-top{{/if}}">
+				<div class="col-md-1 col-sm-2 col-xxs-12">
+					<img class="number" alt="{{num @index}}" src="links/{{num @index}}.png">
 				</div>
-				{{/each}}
-				<div class="row padding-top">
-					<div class="col-sm-12">
-						<a class="button" href="contact.html">Request a Service or free quote</a>
-					</div>
+				<div class="col-md-4 col-sm-4 col-xxs-12">
+					<p class="orange no-margin-bottom">
+						<b>{{this.question}}</b>
+					</p>
 				</div>
+				<div class="col-md-7 col-sm-6 col-xxs-12">
+					<p>{{this.answer}}</p>
+				</div>
+			</div>
+			{{/lt}}{{/each}}
+			<div class="row padding-top">
+				<div class="col-sm-12">
+					<a class="button" href="contact.html">Request a Service or free quote</a>
+				</div>
+			</div>
 	</section>
 
 	<!--FOOTER-->
@@ -194,7 +191,8 @@
 					</p>
 					<a href="https://www.facebook.com/certifiedpest/?ref=br_rs">
 						<i class="fa fa-2x fa-facebook-square"></i>
-					</a><!--
+					</a>
+					<!--
 					<a href="#">
 						<i class="fa fa-2x  fa-instagram"></i>
 					</a>-->
