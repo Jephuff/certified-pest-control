@@ -181,6 +181,11 @@
     width: 40%;
     padding-top: 0px;
   }
+  /*PACKAGES*/
+  .white-background > .col-sm-4 {
+  padding-right: 0px;
+  padding-left: 0px;
+}
   /*QUESTIONS*/
   .number {
     float: right;

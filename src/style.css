@@ -332,10 +332,6 @@ header p {
   background: #e5eaeb url(links/packages.jpg) no-repeat scroll center top /
     cover;
 }
-.white-background > .col-sm-4 {
-  padding-right: 0px;
-  padding-left: 0px;
-}
 .packages .white-background h3 {
   text-align: center;
   color: rgba(255, 255, 255, 0.6);
@@ -474,7 +470,7 @@ footer .border-top {
 }
 .note {
   font-size: 0.8em;
-  opacity: 0.8;
+  color: #ffffff82;
 }
 
 .hidden {
