@@ -152,9 +152,6 @@ nav ul {
   text-transform: uppercase;
   font-weight: 700;
 }
-nav li a:active {
-  text-decoration: underline;
-}
 .nav-bar a:before,
 .services a:before {
   content: "";
