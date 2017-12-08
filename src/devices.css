@@ -173,7 +173,8 @@
     transform: translateX(-50%);
   }
   .button {
-    box-shadow: 1px 1px 1px #8a8a8a;
+  	-webkit-box-shadow: 1px 1px 1px #8a8a8a;
+    box-shadow: 1px 1px 2px #8a8a8a;
   }
   /*WHY*/
   .why img {
