@@ -141,6 +141,7 @@ nav ul {
 .nav li {
   float: left;
   display: block;
+  margin-bottom: 0px;
 }
 .nav li:not(:first-child) {
   padding-left: 40px;
