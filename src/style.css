@@ -361,7 +361,7 @@ header p {
   list-style-type: none;
 }
 .packages ul.border-bottom li {
-  border-bottom: 1px dotted rgba(255,255,255,.3);
+  border-bottom: 1px dotted rgba(255,255,255,.2);
   padding-bottom: 5px;
 }
 .small {
