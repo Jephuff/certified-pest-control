@@ -300,6 +300,7 @@ header p {
 .services-details {
   background: #e5eaeb url(links/dots.png) no-repeat scroll right top;
   text-align: left;
+  height: 100%;
 }
 .services-details .box > .padding-block {
   padding: 10px 20px;
