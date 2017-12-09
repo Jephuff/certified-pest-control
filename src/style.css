@@ -26,6 +26,9 @@ a {
   text-decoration: none;
   position: relative;
 }
+a:focus {
+  outline: none;
+}
 h2 {
   font-size: 1.5em;
   text-transform: uppercase;
@@ -40,6 +43,7 @@ h3 {
   min-width: 50%;
   flex-wrap: wrap;
   padding: 0px 0px 0px 18px;
+  flex: 1;
 }
 .wrap-bullets ul li {
   min-width: 50%;
@@ -479,5 +483,4 @@ footer .border-top {
 #map {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
-  filter: grayscale;
 }
