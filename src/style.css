@@ -476,8 +476,8 @@ footer .border-top {
 .hidden {
   display: none;
 }
-
 #map {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
+  filter: grayscale;
 }
