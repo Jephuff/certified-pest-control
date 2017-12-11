@@ -31,213 +31,213 @@
 </head>
 
 <body>
-
-	<!--NAV-->
-	<nav>
-		<div class="hidden-sm">
-			<div class="row dark center">
-				<div class="col-xxs-4">
-					<a href="index.html">Home</a>
+	<div>
+		<!--NAV-->
+		<nav>
+			<div class="hidden-sm">
+				<div class="row dark center">
+					<div class="col-xxs-4">
+						<a href="index.html">Home</a>
+					</div>
+					<div class="col-xxs-4">
+						<a href="services.html">Services</a>
+					</div>
+					<div class="col-xxs-4">
+						<a href="contact.html">Contact</a>
+						</li>
+					</div>
 				</div>
-				<div class="col-xxs-4">
-					<a href="services.html">Services</a>
-				</div>
-				<div class="col-xxs-4">
-					<a href="contact.html">Contact</a>
-					</li>
-				</div>
-			</div>
-			<div class="row top-margin">
-				<div class="col-xxs-8 col-xxs-offset-2 col-xs-6 col-xs-offset-3">
-					<a href="index.html">
-						<img class="logo" alt="Logo" src="links/logo.png">
-					</a>
-				</div>
-			</div>
-		</div>
-		<div class="container">
-			<div class="visible-sm">
-				<div class="row">
-					<div class="col-sm-4 col-md-3">
+				<div class="row top-margin">
+					<div class="col-xxs-8 col-xxs-offset-2 col-xs-6 col-xs-offset-3">
 						<a href="index.html">
 							<img class="logo" alt="Logo" src="links/logo.png">
 						</a>
 					</div>
-					<div class="col-sm-8 col-md-9">
-						<div class="nav-bar">
-							<span class="toll-free">Toll free: {{contact.phone}}</span>
-							<ul class="nav">
+				</div>
+			</div>
+			<div class="container">
+				<div class="visible-sm">
+					<div class="row">
+						<div class="col-sm-4 col-md-3">
+							<a href="index.html">
+								<img class="logo" alt="Logo" src="links/logo.png">
+							</a>
+						</div>
+						<div class="col-sm-8 col-md-9">
+							<div class="nav-bar">
+								<span class="toll-free">Toll free: {{contact.phone}}</span>
+								<ul class="nav">
+									<li>
+										<a href="index.html">Home</a>
+									</li>
+									<li>
+										<a href="services.html">Services</a>
+									</li>
+									<li>
+										<a href="contact.html">Contact</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<!--HEADER-->
+		<section class="services-header">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1">
+						<h1>Our Services</h1>
+						<p>Certified Pest Control offers exterior and interior protection against all types of summer pests, bedbugs and rodents
+							and other mammals. For maximum protection, we recommend our
+							<a href="#gold">gold package.</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!--SERVICES-->
+		<section class="services-details">
+			<div class="container">
+				<div class="row padding-top">
+					{{#each services.services}}
+					<div class="col-sm-4">
+						<div class="box">
+							<img alt="{{this.title}}" src="{{dist this.image}}">
+							<div class="padding-block wrap-bullets">
+								<h3 class="orange">{{this.title}}</h3>
+								{{{markdown this.description}}}
+							</div>
+						</div>
+					</div>
+					{{/each}}
+				</div>
+			</div>
+		</section>
+
+		<!--PACKAGES-->
+		<section class="packages">
+			<a name="gold"></a>
+			<div class="container">
+				<div class="row center">
+					<div class="col-sm-12">
+						<h2 class="white">Exterior Protection Packages</h3>
+							<p class="center white dim">We offer three levels of seasonal protection, and also year round home protection to protect from rodents.</p>
+							<div class="row white-background">
+								<div class="col-sm-4 col-xs-12 col-xxs-12">
+									<h3 class="gold">Gold Package</h3>
+									<div class="padding-block">
+										<ul class="border-bottom white">
+											<li>
+												<b>{{length services.packages.gold}} visits</b>
+											</li>
+											{{#each services.packages.gold}}
+											<li>{{this.visit}}</li>
+											{{/each}}
+										</ul>
+									</div>
+								</div>
+								<div class="col-sm-4 col-xs-12 col-xxs-12 no-padding relative">
+									<h3 class="silver">Silver Package</h3>
+									<div class="padding-block">
+										<ul class="border-bottom white">
+											<li>
+												<b>{{length services.packages.silver}} visits</b>
+											</li>
+											{{#each services.packages.silver}}
+											<li>{{this.visit}}</li>
+											{{/each}}
+										</ul>
+									</div>
+								</div>
+								<div class="col-sm-4 col-xs-12 col-xxs-12 relative">
+									<h3 class="bronze">Bronze Package</h3>
+									<div class="padding-block">
+										<ul class="border-bottom white">
+											<li>
+												<b>{{length services.packages.bronze}} visit</b>
+											</li>
+											{{#each services.packages.bronze}}
+											<li>{{this.visit}}</li>
+											{{/each}}
+										</ul>
+										<p class="note bottom right white">
+											<i>(dates are approximate)</i>
+										</p>
+									</div>
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!--OTHER-->
+		<section class="other">
+			<div class="container">
+				<div class="row center">
+					<div class="col-sm-12">
+						<div class="padding-block">
+							<h2>Optional Add-ons</h2>
+							<ul>
+								{{#each services.addOns}}
 								<li>
-									<a href="index.html">Home</a>
-								</li>
-								<li>
-									<a href="services.html">Services</a>
-								</li>
-								<li>
-									<a href="contact.html">Contact</a>
-								</li>
+									<i class="fa fa-check" aria-hidden="true"></i> {{this.addOn}}</li>
+								{{/each}}
 							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</nav>
+		</section>
 
-	<!--HEADER-->
-	<section class="services-header">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-10 col-md-offset-1">
-					<h1>Our Services</h1>
-					<p>Certified Pest Control offers exterior and interior protection against all types of summer pests, bedbugs and rodents
-						and other mammals. For maximum protection, we recommend our
-						<a href="#gold">gold package.</a>
-					</p>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!--SERVICES-->
-	<section class="services-details">
-		<div class="container">
-			<div class="row padding-top">
-				{{#each services.services}}
-				<div class="col-sm-4">
-					<div class="box">
-						<img alt="{{this.title}}" src="{{dist this.image}}">
-						<div class="padding-block wrap-bullets">
-							<h3 class="orange">{{this.title}}</h3>
-							{{{markdown this.description}}}
-						</div>
-					</div>
-				</div>
-				{{/each}}
-			</div>
-		</div>
-	</section>
-
-	<!--PACKAGES-->
-	<section class="packages">
-		<a name="gold"></a>
-		<div class="container">
-			<div class="row center">
-				<div class="col-sm-12">
-					<h2 class="white">Exterior Protection Packages</h3>
-						<p class="center white dim">We offer three levels of seasonal protection, and also year round home protection to protect from rodents.</p>
-						<div class="row white-background">
-							<div class="col-sm-4 col-xs-12 col-xxs-12">
-								<h3 class="gold">Gold Package</h3>
-								<div class="padding-block">
-									<ul class="border-bottom white">
-										<li>
-											<b>{{length services.packages.gold}} visits</b>
-										</li>
-										{{#each services.packages.gold}}
-										<li>{{this.visit}}</li>
-										{{/each}}
-									</ul>
-								</div>
-							</div>
-							<div class="col-sm-4 col-xs-12 col-xxs-12 no-padding relative">
-								<h3 class="silver">Silver Package</h3>
-								<div class="padding-block">
-									<ul class="border-bottom white">
-										<li>
-											<b>{{length services.packages.silver}} visits</b>
-										</li>
-										{{#each services.packages.silver}}
-										<li>{{this.visit}}</li>
-										{{/each}}
-									</ul>
-								</div>
-							</div>
-							<div class="col-sm-4 col-xs-12 col-xxs-12 relative">
-								<h3 class="bronze">Bronze Package</h3>
-								<div class="padding-block">
-									<ul class="border-bottom white">
-										<li>
-											<b>{{length services.packages.bronze}} visit</b>
-										</li>
-										{{#each services.packages.bronze}}
-										<li>{{this.visit}}</li>
-										{{/each}}
-									</ul>
-									<p class="note bottom right white">
-										<i>(dates are approximate)</i>
-									</p>
-								</div>
-							</div>
-						</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!--OTHER-->
-	<section class="other">
-		<div class="container">
-			<div class="row center">
-				<div class="col-sm-12">
-					<div class="padding-block">
-						<h2>Optional Add-ons</h2>
-						<ul>
-							{{#each services.addOns}}
+		<!--FOOTER-->
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-sm-3 col-xxs-7">
+						<ul class="fa-ul list">
 							<li>
-								<i class="fa fa-check" aria-hidden="true"></i> {{this.addOn}}</li>
-							{{/each}}
+								<i class="fa-li fa fa-map-marker"> </i> Grafton, ON</li>
+							<li>
+								<i class="fa-li fa fa-mobile "> </i> Toll free: {{contact.phone}}</li>
+							<li>
+								<i class="fa-li fa fa-envelope-o"> </i>
+								<a href="mailto:{{contact.email}}">{{contact.email}}</a>
+							</li>
 						</ul>
 					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!--FOOTER-->
-	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3 col-sm-3 col-xxs-7">
-					<ul class="fa-ul list">
-						<li>
-							<i class="fa-li fa fa-map-marker"> </i> Grafton, ON</li>
-						<li>
-							<i class="fa-li fa fa-mobile "> </i> Toll free: {{contact.phone}}</li>
-						<li>
-							<i class="fa-li fa fa-envelope-o"> </i>
-							<a href="mailto:{{contact.email}}">{{contact.email}}</a>
-						</li>
-					</ul>
-				</div>
-				<div class="col-md-6 col-sm-5 col-xxs-5">
-					<p class="five-margin-bottom">
-						<b>Follow Us</b>
-					</p>
-					<a href="https://www.facebook.com/certifiedpest/?ref=br_rs">
-						<i class="fa fa-2x fa-facebook-square"></i>
-					</a>
-					<!--
+					<div class="col-md-6 col-sm-5 col-xxs-5">
+						<p class="five-margin-bottom">
+							<b>Follow Us</b>
+						</p>
+						<a href="https://www.facebook.com/certifiedpest/?ref=br_rs">
+							<i class="fa fa-2x fa-facebook-square"></i>
+						</a>
+						<!--
 					<a href="#">
 						<i class="fa fa-2x  fa-instagram"></i>
 					</a>-->
-					<a href="https://www.linkedin.com/in/certifiedpest/">
-						<i class="fa fa-2x fa-linkedin-square"></i>
-					</a>
+						<a href="https://www.linkedin.com/in/certifiedpest/">
+							<i class="fa fa-2x fa-linkedin-square"></i>
+						</a>
+					</div>
+					<div class="col-md-3 col-sm-4 visible-sm">
+						<ul class="fa-ul list">
+							<li>
+								<i class="fa-li fa fa-check-square-o"> </i> Certified Pest Control is licensed by the Ministry of the Environment.</li>
+						</ul>
+					</div>
 				</div>
-				<div class="col-md-3 col-sm-4 visible-sm">
-					<ul class="fa-ul list">
-						<li>
-							<i class="fa-li fa fa-check-square-o"> </i> Certified Pest Control is licensed by the Ministry of the Environment.</li>
-					</ul>
+				<div class="row">
+					<div class="col-md-12">
+						<p class="note border-top"> Copyright 2017 © Certified Pest Control</p>
+					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<p class="note border-top"> Copyright 2017 © Certified Pest Control</p>
-				</div>
-			</div>
-		</div>
-	</footer>
-
+		</footer>
+	</div>
 </body>
