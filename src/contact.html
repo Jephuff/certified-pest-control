@@ -31,208 +31,210 @@
 </head>
 
 <body>
-
-	<!--NAV-->
-	<nav>
-		<div class="hidden-sm">
-			<div class="row dark center">
-				<div class="col-xxs-4">
-					<a href="index.html">Home</a>
+	<div>
+		<!--NAV-->
+		<nav>
+			<div class="hidden-sm">
+				<div class="row dark center">
+					<div class="col-xxs-4">
+						<a href="index.html">Home</a>
+					</div>
+					<div class="col-xxs-4">
+						<a href="services.html">Services</a>
+					</div>
+					<div class="col-xxs-4">
+						<a href="contact.html">Contact</a>
+						</li>
+					</div>
 				</div>
-				<div class="col-xxs-4">
-					<a href="services.html">Services</a>
-				</div>
-				<div class="col-xxs-4">
-					<a href="contact.html">Contact</a>
-					</li>
-				</div>
-			</div>
-			<div class="row top-margin">
-				<div class="col-xxs-8 col-xxs-offset-2 col-xs-6 col-xs-offset-3">
-					<a href="index.html">
-						<img class="logo" alt="Logo" src="links/logo.png">
-					</a>
-				</div>
-			</div>
-		</div>
-		<div class="container">
-			<div class="visible-sm">
-				<div class="row">
-					<div class="col-sm-4 col-md-3">
+				<div class="row top-margin">
+					<div class="col-xxs-8 col-xxs-offset-2 col-xs-6 col-xs-offset-3">
 						<a href="index.html">
 							<img class="logo" alt="Logo" src="links/logo.png">
 						</a>
 					</div>
-					<div class="col-sm-8 col-md-9">
-						<div class="nav-bar">
-							<span class="toll-free">Toll free: {{contact.phone}}</span>
-							<ul class="nav">
-								<li>
-									<a href="index.html">Home</a>
-								</li>
-								<li>
-									<a href="services.html">Services</a>
-								</li>
-								<li>
-									<a href="contact.html">Contact</a>
-								</li>
-							</ul>
+				</div>
+			</div>
+			<div class="container">
+				<div class="visible-sm">
+					<div class="row">
+						<div class="col-sm-4 col-md-3">
+							<a href="index.html">
+								<img class="logo" alt="Logo" src="links/logo.png">
+							</a>
+						</div>
+						<div class="col-sm-8 col-md-9">
+							<div class="nav-bar">
+								<span class="toll-free">Toll free: {{contact.phone}}</span>
+								<ul class="nav">
+									<li>
+										<a href="index.html">Home</a>
+									</li>
+									<li>
+										<a href="services.html">Services</a>
+									</li>
+									<li>
+										<a href="contact.html">Contact</a>
+									</li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</nav>
+		</nav>
 
-	<!--HEADER-->
-	<section class="contact-header">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-10 col-md-offset-1">
-					<h1>We're Here to Help</h1>
-					<p>It’s very important to us that all your questions are answered. Please don’t hesitate to contact us with any questions
-						by using the form below or emailing us at
-						<a href="mailto:{{contact.email}}">{{contact.email}}.</a>
-					</p>
+		<!--HEADER-->
+		<section class="contact-header">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1">
+						<h1>We're Here to Help</h1>
+						<p>It’s very important to us that all your questions are answered. Please don’t hesitate to contact us with any questions
+							by using the form below or emailing us at
+							<a href="mailto:{{contact.email}}">{{contact.email}}.</a>
+						</p>
+					</div>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 
-	<!--CONTACT FORM-->
-	<section class="contact-form" style="padding: 0; position: relative;">
-		<div id="map"></div>
-		<div class="container map-overlay">
-			<div class="form">
-				<h3>Contact Us</h3>
-				<form class="request-form" autocomplete="off" role="form" name="contact" netlify-honeypot="bot-field" netlify>
-					<p class="hidden">
-						<label>Don’t fill this out:
-							<input name="bot-field">
-						</label>
-					</p>
-					<div class="form-group">
-						<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="firstname">How can we help you? </label>
-						<div class="col-md-7 col-lg-8 col-xxs-12">
-							<select class="form-control" id="category" name="category" tabindex="12" onchange="onFormTypeChange(this)">
-								<option value="Request a Free Quote">Request a free quote</option>
-								<option value="General Inquiries">General inquiries</option>
-							</select>
+		<!--CONTACT FORM-->
+		<section class="contact-form" style="padding: 0; position: relative;">
+			<div id="map"></div>
+			<div class="container map-overlay">
+				<div class="form">
+					<h3>Contact Us</h3>
+					<form class="request-form" autocomplete="off" role="form" name="contact" netlify-honeypot="bot-field" netlify>
+						<p class="hidden">
+							<label>Don’t fill this out:
+								<input name="bot-field">
+							</label>
+						</p>
+						<div class="form-group">
+							<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="firstname">How can we help you? </label>
+							<div class="col-md-7 col-lg-8 col-xxs-12">
+								<select class="form-control" id="category" name="category" tabindex="12" onchange="onFormTypeChange(this)">
+									<option value="Request a Free Quote">Request a free quote</option>
+									<option value="General Inquiries">General inquiries</option>
+								</select>
+							</div>
 						</div>
-					</div>
-					<div class="form-group only-request">
-						<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="firstname">Package type
-							<span class="orange">*</span>
-						</label>
-						<div class="col-md-7 col-lg-8 col-xxs-12">
-							<select class="form-control" id="package" name="package" tabindex="12" required>
-								<option value="" selected disabled></option>
-								<option value="gold">Gold</option>
-								<option value="silver">Silver</option>
-								<option value="bronze">Bronze</option>
-								<option value="unsure">Unsure</option>
-							</select>
+						<div class="form-group only-request">
+							<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="firstname">Package type
+								<span class="orange">*</span>
+							</label>
+							<div class="col-md-7 col-lg-8 col-xxs-12">
+								<select class="form-control" id="package" name="package" tabindex="12" required>
+									<option value="" selected disabled></option>
+									<option value="gold">Gold</option>
+									<option value="silver">Silver</option>
+									<option value="bronze">Bronze</option>
+									<option value="unsure">Unsure</option>
+								</select>
+							</div>
 						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="firstname">Full name
-							<span class="orange">*</span>
-						</label>
-						<div class="col-md-7 col-lg-8 col-xxs-12">
-							<input required class="form-control" id="fullname" name="fullname" type="text">
+						<div class="form-group">
+							<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="firstname">Full name
+								<span class="orange">*</span>
+							</label>
+							<div class="col-md-7 col-lg-8 col-xxs-12">
+								<input required class="form-control" id="fullname" name="fullname" type="text">
+							</div>
 						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="email">Email
-							<span class="orange">*</span>
-						</label>
-						<div class="col-md-7 col-lg-8 col-xxs-12">
-							<input required class="form-control" id="email" name="email" type="email">
+						<div class="form-group">
+							<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="email">Email
+								<span class="orange">*</span>
+							</label>
+							<div class="col-md-7 col-lg-8 col-xxs-12">
+								<input required class="form-control" id="email" name="email" type="email">
+							</div>
 						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="phone">Phone</label>
-						<div class="col-md-7 col-lg-8 col-xxs-12">
-							<input class="form-control check" id="phone" name="phone" type="tel">
+						<div class="form-group">
+							<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="phone">Phone</label>
+							<div class="col-md-7 col-lg-8 col-xxs-12">
+								<input class="form-control check" id="phone" name="phone" type="tel">
+							</div>
 						</div>
-					</div>
-					<div class="form-group only-request">
-						<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="street">Street</label>
-						<div class="col-md-7 col-lg-8 col-xxs-12">
-							<input class="form-control check" id="street" name="street" type="text">
+						<div class="form-group only-request">
+							<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="street">Street</label>
+							<div class="col-md-7 col-lg-8 col-xxs-12">
+								<input class="form-control check" id="street" name="street" type="text">
+							</div>
 						</div>
-					</div>
-					<div class="form-group only-request">
-						<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="city">City</label>
-						<div class="col-md-7 col-lg-8 col-xxs-12">
-							<input class="form-control check" id="city" name="city" type="text">
+						<div class="form-group only-request">
+							<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="city">City</label>
+							<div class="col-md-7 col-lg-8 col-xxs-12">
+								<input class="form-control check" id="city" name="city" type="text">
+							</div>
 						</div>
-					</div>
-					<div class="form-group only-request">
-						<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="postalcode">Postal Code</label>
-						<div class="col-md-7 col-lg-8 col-xxs-12">
-							<input class="form-control check" id="postalcode" name="postalcode" type="text">
+						<div class="form-group only-request">
+							<label class="col-md-5 col-lg-4 col-xxs-12 control-label" for="postalcode">Postal Code</label>
+							<div class="col-md-7 col-lg-8 col-xxs-12">
+								<input class="form-control check" id="postalcode" name="postalcode" type="text">
+							</div>
 						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-md-5 col-lg-4 col-xxs-12 control-label" or="message">Message
-							<span class="orange">*</span>
-						</label>
-						<div class="col-md-7 col-lg-8 col-xxs-12">
-							<textarea required class="form-control check" id="message" name="message" rows="6"></textarea>
+						<div class="form-group">
+							<label class="col-md-5 col-lg-4 col-xxs-12 control-label" or="message">Message
+								<span class="orange">*</span>
+							</label>
+							<div class="col-md-7 col-lg-8 col-xxs-12">
+								<textarea required class="form-control check" id="message" name="message" rows="6"></textarea>
+							</div>
 						</div>
-					</div>
-					<button type="submit" class="button" style="cursor: pointer;">Send Request</a>
-				</form>
-			</div>
-		</div>
-	</section>
-
-	<!--FOOTER-->
-	<footer>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3 col-sm-3 col-xxs-7">
-					<ul class="fa-ul list">
-						<li>
-							<i class="fa-li fa fa-map-marker"> </i> Grafton, ON</li>
-						<li>
-							<i class="fa-li fa fa-mobile "> </i> Toll free: {{contact.phone}}</li>
-						<li>
-							<i class="fa-li fa fa-envelope-o"> </i>
-							<a href="mailto:{{contact.email}}">{{contact.email}}</a>
-						</li>
-					</ul>
+						<button type="submit" class="button" style="cursor: pointer;">Send Request</a>
+					</form>
 				</div>
-				<div class="col-md-6 col-sm-5 col-xxs-5">
-					<p class="five-margin-bottom">
-						<b>Follow Us</b>
-					</p>
-					<a href="https://www.facebook.com/certifiedpest/?ref=br_rs">
-						<i class="fa fa-2x fa-facebook-square"></i>
-					</a>
-					<!--
+			</div>
+		</section>
+
+		<!--FOOTER-->
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3 col-sm-3 col-xxs-7">
+						<ul class="fa-ul list">
+							<li>
+								<i class="fa-li fa fa-map-marker"> </i> Grafton, ON</li>
+							<li>
+								<i class="fa-li fa fa-mobile "> </i> Toll free: {{contact.phone}}</li>
+							<li>
+								<i class="fa-li fa fa-envelope-o"> </i>
+								<a href="mailto:{{contact.email}}">{{contact.email}}</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-6 col-sm-5 col-xxs-5">
+						<p class="five-margin-bottom">
+							<b>Follow Us</b>
+						</p>
+						<a href="https://www.facebook.com/certifiedpest/?ref=br_rs">
+							<i class="fa fa-2x fa-facebook-square"></i>
+						</a>
+						<!--
 					<a href="#">
 						<i class="fa fa-2x  fa-instagram"></i>
 					</a>-->
-					<a href="https://www.linkedin.com/in/certifiedpest/">
-						<i class="fa fa-2x fa-linkedin-square"></i>
-					</a>
+						<a href="https://www.linkedin.com/in/certifiedpest/">
+							<i class="fa fa-2x fa-linkedin-square"></i>
+						</a>
+					</div>
+					<div class="col-md-3 col-sm-4 visible-sm">
+						<ul class="fa-ul list">
+							<li>
+								<i class="fa-li fa fa-check-square-o"> </i> Certified Pest Control is licensed by the Ministry of the Environment.</li>
+						</ul>
+					</div>
 				</div>
-				<div class="col-md-3 col-sm-4 visible-sm">
-					<ul class="fa-ul list">
-						<li>
-							<i class="fa-li fa fa-check-square-o"> </i> Certified Pest Control is licensed by the Ministry of the Environment.</li>
-					</ul>
+				<div class="row">
+					<div class="col-md-12">
+						<p class="note border-top"> Copyright 2017 © Certified Pest Control</p>
+					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<p class="note border-top"> Copyright 2017 © Certified Pest Control</p>
-				</div>
-			</div>
-	</footer>
-	<script src="script/contact.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5jg7LfSimPCet2TOxvTv0O8yHsTFwimo&callback=initMap&libraries=places"
-	 async defer></script>
+		</footer>
+
+		</div>
+		<script src="script/contact.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5jg7LfSimPCet2TOxvTv0O8yHsTFwimo&callback=initMap&libraries=places"
+		 async defer></script>
 </body>
