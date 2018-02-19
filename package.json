@@ -20,13 +20,13 @@
   },
   "homepage": "https://gitlab.com/Jephuff/certified-pest-control#README",
   "devDependencies": {
-    "browser-sync": "^2.18.13",
-    "gulp": "^3.9.1",
-    "gulp-compile-handlebars": "^0.6.1",
-    "handlebars": "^4.0.11",
-    "mkdirp": "^0.5.1"
+    "browser-sync": "^2.18.13"
   },
   "dependencies": {
+    "gulp-compile-handlebars": "^0.6.1",
+    "handlebars": "^4.0.11",
+    "mkdirp": "^0.5.1",
+    "gulp": "^3.9.1",
     "axios": "^0.17.1",
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
