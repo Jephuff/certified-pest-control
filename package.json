@@ -19,10 +19,9 @@
     "url": "https://gitlab.com/Jephuff/certified-pest-control/issues"
   },
   "homepage": "https://gitlab.com/Jephuff/certified-pest-control#README",
-  "devDependencies": {
-    "browser-sync": "^2.18.13"
-  },
+  "devDependencies": {},
   "dependencies": {
+    "browser-sync": "^2.18.13",
     "gulp-compile-handlebars": "^0.6.1",
     "handlebars": "^4.0.11",
     "mkdirp": "^0.5.1",
