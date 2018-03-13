@@ -442,9 +442,6 @@ footer {
   background-color: #12305a;
   color: #ffffff;
   font-size: 0.8em;
-  bottom: 0;
-  position: absolute;
-  width: 100%;
 }
 .fa-ul {
   padding-left: 0;
