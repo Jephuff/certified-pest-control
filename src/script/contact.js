@@ -125,3 +125,9 @@ window.initMap = function initMap() {
     }
   );
 };
+
+var pleaseSpecify = document.querySelector(".please-specify");
+var hearInput = document.querySelector("#hear");
+hearInput.addEventListener("change", function(e) {
+  pleaseSpecify.style.display = this.value === "other" ? "block" : "none";
+});
