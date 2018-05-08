@@ -128,6 +128,13 @@ window.initMap = function initMap() {
 
 var pleaseSpecify = document.querySelector(".please-specify");
 var hearInput = document.querySelector("#hear");
+var pleaseSpecifyInput = document.querySelector("#specify");
 hearInput.addEventListener("change", function(e) {
-  pleaseSpecify.style.display = this.value === "other" ? "block" : "none";
+  if (this.value === "other") {
+    pleaseSpecify.style.display = "block";
+    pleaseSpecifyInput.required = true;
+  } else {
+    pleaseSpecify.style.display = "none";
+    pleaseSpecifyInput.required = false;
+  }
 });
