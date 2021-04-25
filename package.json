@@ -21,7 +21,7 @@
   "homepage": "https://gitlab.com/Jephuff/certified-pest-control#README",
   "devDependencies": {},
   "dependencies": {
-    "axios": "^0.17.1",
+    "axios": "^0.21.1",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "babelify": "^8.0.0",
