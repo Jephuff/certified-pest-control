@@ -115,14 +115,14 @@ gulp.task("reload", function() {
   reload();
 });
 
-gulp.task("reload-js", ["js"], reload);
-gulp.task("reload-css", ["css"], reload);
-gulp.task("reload-html", ["html"], reload);
-gulp.task("reload-images", ["images"], reload);
-gulp.task("reload-copy-files", ["copy-files"], reload);
+gulp.task("reload-js", gulp.series(gulp.parallel("js"), reload));
+gulp.task("reload-css",gulp.series(gulp.parallel("css"), reload));
+gulp.task("reload-html",gulp.series(gulp.parallel("html"), reload));
+gulp.task("reload-images",gulp.series(gulp.parallel("images"), reload));
+gulp.task("reload-copy-files",gulp.series(gulp.parallel("copy-files"), reload));
 
-gulp.task("build", ["copy-files", "html", "js", "css", "images"]);
-gulp.task("default", ["build"], function() {
+gulp.task("build", gulp.parallel("copy-files", "html", "js", "css", "images"));
+gulp.task("default", gulp.series(gulp.parallel("build"), function() {
   browserSync.init({
     server: {
       baseDir: "./dist"
@@ -138,10 +138,10 @@ gulp.task("default", ["build"], function() {
       "!src/**/*.jpg",
       "!src/**/*.png"
     ],
-    ["reload-copy-files"]
+    gulp.parallel("reload-copy-files")
   );
-  gulp.watch("src/**/*.css", ["reload-css"]);
-  gulp.watch("src/script/**/*.*", ["reload-js"]);
-  gulp.watch("src/**/*.html", ["reload-html"]);
-  gulp.watch(["src/**/*.jpg", "src/**/*.png"], ["reload-images"]);
-});
+  gulp.watch("src/**/*.css", gulp.parallel("reload-css"));
+  gulp.watch("src/script/**/*.*", gulp.parallel("reload-js"));
+  gulp.watch("src/**/*.html", gulp.parallel("reload-html"));
+  gulp.watch(["src/**/*.jpg", "src/**/*.png"], gulp.parallel("reload-images"));
+}));
